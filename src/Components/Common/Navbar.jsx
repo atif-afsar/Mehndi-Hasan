@@ -1,130 +1,153 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [isOpen]);
 
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Collections", path: "/collections" },
     { name: "Bespoke", path: "/bespoke" },
     { name: "Heritage", path: "/heritage" },
-    { name: "Book Appointment", path: "/contact", highlight: true },
   ];
 
   return (
     <>
-      <nav className="w-full fixed top-0 left-0 z-[100] px-6 md:px-10 py-5 flex items-center justify-between text-white border-b border-white/5 bg-black backdrop-blur-lg transition-all duration-300">
-        
+      {/* ── MAIN NAV ── */}
+      <nav
+        className={`fixed top-0 left-0 w-full z-[100] flex items-center justify-between px-14 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
+        ${scrolled
+          ? "h-[68px] bg-[#0c0b09]/92 backdrop-blur-xl border-b border-[#b8965a]/12"
+          : "h-[88px] bg-transparent"
+        }`}
+      >
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 relative z-[110]">
-          <div className="w-8 h-8 bg-white flex items-center justify-center p-1.5 rounded-sm">
-            <img src="/logo.png" alt="M" className="w-full h-full object-contain invert" />
+        <Link to="/" className="flex items-center gap-[1.1rem] z-[110] group">
+          <div className="relative w-[60px] h-[60px] border border-[#b8965a]/50 flex items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:border-[#b8965a] group-hover:rotate-45 group-hover:scale-[0.88] overflow-hidden">
+            <img src="/logo.png" alt="" />
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#b8965a]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
-          <h1 className="text-sm md:text-lg font-serif tracking-widest text-white font-medium uppercase">
-            Mehdi Hasan <span className="text-[#c5a059]">Tailors</span>
-          </h1>
+          <div className="flex flex-col gap-[3px]">
+            <span className="font-['Cormorant_Garamond'] font-light text-[13px] tracking-[0.35em] text-white uppercase leading-none">
+              Mehdi Hasan
+            </span>
+            <span className="font-['Raleway'] font-[200] text-[8px] tracking-[0.5em] text-[#b8965a] uppercase">
+              Tailors 
+            </span>
+          </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden xl:flex gap-10 text-[10px] items-center tracking-[0.2em] font-medium uppercase font-sans">
+        {/* Desktop Links */}
+        <ul className="hidden xl:flex items-center gap-12 list-none">
           {navLinks.map((link) => (
-            <Link 
-              key={link.name}
-              to={link.path} 
-              className={`hover:text-[#c5a059] transition-all duration-300 border-b border-transparent hover:border-[#c5a059] pb-1 ${link.highlight ? 'text-[#c5a059] font-bold' : ''}`}
-            >
-              {link.name}
-            </Link>
+            <li key={link.name}>
+              <Link
+                to={link.path}
+                className="relative font-['Raleway'] font-[300] text-[9.5px] tracking-[0.28em] uppercase text-white/65 hover:text-white transition-colors duration-300 py-1
+                after:content-[''] after:absolute after:-bottom-[2px] after:left-0 after:w-0 after:h-[1px] after:bg-[#b8965a] after:transition-all after:duration-500 after:ease-[cubic-bezier(0.16,1,0.3,1)]
+                hover:after:w-full"
+              >
+                {link.name}
+              </Link>
+            </li>
           ))}
         </ul>
 
-        {/* Action Icons & Hamburger */}
-        <div className="flex items-center gap-4 md:gap-8 relative z-[110]">
-          <div className="hidden sm:flex items-center gap-2 text-gray-400 opacity-60 hover:opacity-100 cursor-pointer transition-opacity">
-            <span className="text-sm">🔍</span>
-            <span className="text-[9px] tracking-[0.2em] uppercase hidden lg:block">Search</span>
-          </div>
-          <div className="w-6 h-6 opacity-60 hover:opacity-100 cursor-pointer transition-opacity">
-            <span className="text-lg">🛍️</span>
-          </div>
-          
-          {/* Hamburger Menu Icon */}
-          <button 
-            className="xl:hidden flex flex-col gap-1.5 cursor-pointer p-2"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle Menu"
+        {/* Right cluster */}
+        <div className="flex items-center gap-8 z-[110]">
+          {/* CTA Button */}
+          <Link
+            to="/contact"
+            className="hidden xl:inline-block relative overflow-hidden font-['Raleway'] font-[300] text-[9.5px] tracking-[0.28em] uppercase text-[#b8965a] px-[1.6rem] py-[0.7rem] border border-[#b8965a]/45
+            before:content-[''] before:absolute before:inset-0 before:bg-[#b8965a] before:-translate-x-full before:transition-transform before:duration-500 before:ease-[cubic-bezier(0.16,1,0.3,1)]
+            hover:text-[#0c0b09] hover:before:translate-x-0"
           >
-            <div className={`w-6 h-[1px] bg-white transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
-            <div className={`w-6 h-[1px] bg-white transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></div>
-            <div className={`w-6 h-[1px] bg-white transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
+            <span className="relative z-10">Book Appointment</span>
+          </Link>
+
+          {/* Hamburger */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="xl:hidden flex flex-col gap-[6px] p-1 bg-transparent border-none cursor-pointer"
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block w-[28px] h-[1px] bg-white origin-center transition-all duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]
+              ${isOpen ? "rotate-45 translate-y-[3.5px]" : ""}`}
+            />
+            <span
+              className={`block h-[1px] bg-white origin-right transition-all duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]
+              ${isOpen ? "w-[28px] -rotate-45 -translate-y-[3.5px] mr-0" : "w-[20px] ml-auto"}`}
+            />
           </button>
         </div>
-
-        {/* Mobile Navigation Drawer */}
-        <div className={`fixed inset-0 bg-[#07100b] z-[1000] flex flex-col transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="absolute inset-0 bg-gradient-to-br from-[#c5a059]/5 via-transparent to-transparent opacity-30 pointer-events-none"></div>
-          
-          {/* Mobile Header (Drawer) */}
-          <div className="flex items-center justify-between px-6 py-6 border-b border-white/5">
-            <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-white flex items-center justify-center p-1.5 rounded-sm">
-                <img src="/logo.png" alt="M" className="w-full h-full object-contain invert" />
-              </div>
-              <h1 className="text-sm font-serif tracking-widest text-white font-medium uppercase">
-                Mehdi Hasan <span className="text-[#c5a059]">Tailors</span>
-              </h1>
-            </Link>
-            <button 
-              onClick={() => setIsOpen(false)}
-              className="p-2 text-white/60 hover:text-[#c5a059] transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          <div className="flex-1 flex flex-col items-start justify-center px-10 relative">
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-              <div className="h-full w-full bg-[radial-gradient(#c5a059_1px,transparent_1px)] [background-size:40px_40px]"></div>
-            </div>
-            
-            <ul className="flex flex-col gap-6 md:gap-10 relative z-20">
-              {navLinks.map((link, i) => (
-                <li 
-                  key={link.name} 
-                  className="overflow-hidden"
-                >
-                  <Link 
-                    to={link.path} 
-                    onClick={() => setIsOpen(false)}
-                    className={`text-4xl md:text-6xl font-serif tracking-tight uppercase hover:text-[#c5a059] transition-all duration-500 block ${link.highlight ? 'text-[#c5a059]' : 'text-white'} transform ${isOpen ? 'translate-y-0' : 'translate-y-full'} transition-transform duration-700`}
-                    style={{ transitionDelay: `${i * 100}ms` }}
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            
-            <div className={`mt-24 space-y-6 relative z-20 transform transition-all duration-700 delay-500 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-               <div className="w-12 h-px bg-[#c5a059]/30 mb-8"></div>
-               <p className="text-[10px] tracking-[0.5em] text-[#c5a059]/60 uppercase font-bold">Inquiries</p>
-               <div className="flex flex-col gap-4">
-                  <a href="#" className="text-xs tracking-[0.2em] uppercase text-gray-400 hover:text-white transition-colors">Instagram</a>
-                  <a href="#" className="text-xs tracking-[0.2em] uppercase text-gray-400 hover:text-white transition-colors">WhatsApp</a>
-               </div>
-            </div>
-          </div>
-          
-          <div className="px-10 py-10 border-t border-white/5 text-[9px] text-gray-700 tracking-[0.4em] uppercase">
-             © 2024 Mehdi Hasan • Lahore • London • Dubai
-          </div>
-        </div>
-
       </nav>
-      {/* Spacer to prevent content jump if needed - currently using absolute positioning in some pages */}
+
+      {/* ── MOBILE DRAWER ── */}
+      <div
+        className={`fixed inset-0 z-[1000] bg-[#0c0b09] flex flex-col items-center justify-center transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
+        ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+      >
+        {/* Corner Accents */}
+        <span className="absolute top-12 left-12 w-[80px] h-[80px] border-t border-l border-[#b8965a]/25 pointer-events-none" />
+        <span className="absolute bottom-12 right-12 w-[80px] h-[80px] border-b border-r border-[#b8965a]/25 pointer-events-none" />
+
+        {/* Ambient Glow */}
+        <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[40vw] h-[40vw] rounded-full bg-[#b8965a]/5 blur-[80px] pointer-events-none" />
+
+        {/* Menu Links */}
+        <ul className="list-none text-center space-y-1 relative z-10">
+          {[...navLinks, { name: "Book Appointment", path: "/contact", highlight: true }].map((link, i) => (
+            <li key={link.name} className="overflow-hidden">
+              <Link
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`relative inline-block font-['Cormorant_Garamond'] font-[300] text-[clamp(2.2rem,5vw,3.5rem)] tracking-[0.05em] no-underline transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
+                ${link.highlight ? "text-[#b8965a] not-italic font-[400]" : "italic text-white/75 hover:text-white"}
+                ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[60px]"}`}
+                style={{ transitionDelay: `${0.04 + i * 0.07}s` }}
+              >
+                {link.name}
+                <span
+                  className="absolute top-[0.4em] -right-8 font-['Raleway'] text-[10px] not-italic font-[200] tracking-[0.2em] text-[#b8965a]/60"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Footer row */}
+        <div
+          className={`absolute bottom-14 left-0 right-0 flex items-center justify-center gap-10 transition-opacity duration-700 delay-500
+          ${isOpen ? "opacity-100" : "opacity-0"}`}
+        >
+          {["Instagram", "WhatsApp", "London"].map((item, i) => (
+            <React.Fragment key={item}>
+              {i > 0 && <span className="w-[1px] h-[16px] bg-[#b8965a]/20" />}
+              <a
+                href="#"
+                className="font-['Raleway'] font-[200] text-[9px] tracking-[0.4em] uppercase text-white/30 hover:text-[#b8965a] transition-colors duration-300 no-underline"
+              >
+                {item}
+              </a>
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
     </>
   );
 };

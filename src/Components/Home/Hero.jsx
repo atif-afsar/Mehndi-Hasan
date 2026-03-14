@@ -25,8 +25,8 @@ const Hero = () => {
         </div>
 
         <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-serif font-medium leading-[1.1] tracking-tight mb-8 md:mb-12">
-          The Art of <br />
-          <span className="italic text-[#c5a059]">Bespoke</span> Tailoring
+          Crafting <br />
+          <span className="italic text-[#c5a059]">Royal</span> Sherwanis
         </h1>
 
         <p className="max-w-xl mx-auto text-xs md:text-base text-gray-400 font-light leading-relaxed tracking-widest mb-12 md:mb-20 opacity-80">
@@ -46,12 +46,7 @@ const Hero = () => {
 
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40">
-        <span className="text-[8px] tracking-[0.5em] uppercase font-bold text-[#c5a059]">Scroll</span>
-        <div className="w-[1px] h-16 bg-gradient-to-b from-[#c5a059] via-[#c5a059]/50 to-transparent animate-bounce"></div>
-      </div>
-
+    
     </section>
   );
 };
