@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background with Dark Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] hover:scale-110 opacity-60"
-        style={{ backgroundImage: "url('/hero.png')" }}
+        style={{ backgroundImage: "url('/Home/hero.png')" }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a1310]/80 via-transparent to-[#0a1310]/95"></div>
 
@@ -24,12 +24,12 @@ const Hero = () => {
           <div className="h-[1px] w-12 md:w-24 bg-[#c5a059] mx-auto mt-3 opacity-50"></div>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-serif font-medium leading-[1.1] tracking-tight mb-8 md:mb-12">
-          Crafting <br />
-          <span className="italic text-[#c5a059]">Royal</span> Sherwanis
+        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-7xl font-serif font-medium leading-[1.1] tracking-tight mb-8 md:mb-12">
+          Crafting
+          <span className="italic text-[#c5a059]"> Royal</span> <br /> Sherwanis
         </h1>
 
-        <p className="max-w-xl mx-auto text-xs md:text-base text-gray-400 font-light leading-relaxed tracking-widest mb-12 md:mb-20 opacity-80">
+        <p className="max-w-xl mx-auto text-xs md:text-base text-gray-400 font-light leading-relaxed tracking-widest mb-6 md:mb-20 opacity-80">
           Experience the pinnacle of sartorial excellence. Each garment is a masterpiece, 
           handcrafted for the modern gentleman who demands nothing less than perfection.
         </p>

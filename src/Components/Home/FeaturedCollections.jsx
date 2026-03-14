@@ -2,8 +2,8 @@ import React from "react";
 
 const FeaturedCollections = () => {
   const collections = [
-    { title: "The Royal Sherwani", desc: "Velvet & Silk masterpieces", image: "https://images.unsplash.com/photo-1594938384824-0227160503ba?auto=format&fit=crop&q=80&w=800" },
-    { title: "Classic Kurta", desc: "Heritage weaving techniques", image: "https://images.unsplash.com/photo-1595180182604-e0b23021f10d?auto=format&fit=crop&q=80&w=800" },
+    { title: "The Royal Sherwani", desc: "Velvet & Silk masterpieces", image: "/Home/heroSherwani.png" },
+    { title: "Classic Kurta", desc: "Heritage weaving techniques", image: "/Home/HomeKurta.png" },
     { title: "Bespoke Suiting", desc: "Precision in every stitch", image: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&q=80&w=800" },
   ];
 
