@@ -15,7 +15,7 @@ const GalleryHero = () => {
         <div className="absolute inset-0 flex justify-center items-center">
             <div className="w-[85%] md:w-[70%] h-full relative">
                  <img 
-                    src="https://images.unsplash.com/photo-1594938298596-eb5fd3f50cb2?q=80&w=2114&auto=format&fit=crop" 
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk-SIZGsGdDULK6VZyvSsjTUTB4RlkN7FqB_fUOX5JMTfgddqc2CTiaui9sp4doKg6LZfOdjEQnchuvYoNFfwHFARIxCIxTz5DZJyNjHe0f1j6XKSyS1mleoDYFMDnjEXX3A7irj0IrmXArmgXGN8S1TO8jtYCtYoYHchGa8zTxkMgIU5Ep6k4z3bcKFtMktLvGCoCU4lHjkUqPjUsjdnkOpJ6cAm7mUuObi4vUBY3JzIYh8SnsCpNm6JqhF-hemRp5etUSZSMX96l" 
                     alt="Fashion Editorial" 
                     className="w-full h-full object-cover opacity-80"
                 />

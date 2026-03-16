@@ -18,7 +18,7 @@ const HeritageHero = () => {
             </p>
             <div className="w-px h-12 bg-[#c5a059]/30"></div>
         </div>
-        <h1 className="text-5xl sm:text-7xl md:text-9xl font-serif font-medium tracking-tight mb-8 leading-[1.1]">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl font-serif font-medium tracking-tight mb-8 leading-[1.1]">
           Heritage <span className="italic text-[#c5a059]">Since 1947</span>
         </h1>
         <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-lg font-light leading-relaxed tracking-widest mb-12 opacity-80">
