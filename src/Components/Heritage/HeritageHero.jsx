@@ -2,7 +2,7 @@ import React from "react";
 
 const HeritageHero = () => {
   return (
-    <section className="relative h-[80vh] md:h-screen w-full flex items-center justify-center text-white overflow-hidden bg-[#0A120F]">
+    <section className="relative h-[100vh] md:h-screen w-full flex items-center justify-center text-white overflow-hidden bg-[#0A120F]">
       {/* Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center transition-transform duration-[20s] scale-110 hover:scale-100 opacity-40 grayscale"

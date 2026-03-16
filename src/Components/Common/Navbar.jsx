@@ -51,7 +51,7 @@ const Navbar = () => {
             <span className="font-serif text-[14px] md:text-[18px] tracking-[0.25em] text-white uppercase leading-tight group-hover:text-[#b8965a] transition-colors duration-500">
               Mehdi Hasan
             </span>
-            <span className="font-sans font-light text-[8px] md:text-[9px] tracking-[0.5em] text-[#b8965a] uppercase">
+            <span className="font-sans font-normal text-[10px] md:text-[9px] tracking-[0.5em] text-[#b8965a] uppercase">
               Est. 1972
             </span>
           </div>
@@ -63,7 +63,7 @@ const Navbar = () => {
             <li key={link.name}>
               <Link
                 to={link.path}
-                className="relative font-sans font-light text-[10px] tracking-[0.3em] uppercase text-white/70 hover:text-white transition-colors duration-300 py-1"
+                className="relative font-sans font-medium text-[10px] tracking-[0.3em] uppercase text-white/70 hover:text-white transition-colors duration-300 py-1"
               >
                 {link.name}
               </Link>
@@ -75,7 +75,7 @@ const Navbar = () => {
         <div className="flex items-center gap-6 z-[110]">
           <Link
             to="/contact"
-            className="hidden sm:inline-block font-sans font-light text-[10px] tracking-[0.2em] uppercase text-[#b8965a] px-6 py-3 border border-[#b8965a]/40 hover:bg-[#b8965a] hover:text-[#0c0b09] transition-all duration-500"
+            className="hidden sm:inline-block font-sans font-medium text-[10px] tracking-[0.2em] uppercase text-[#b8965a] px-6 py-3 border border-[#b8965a]/40 hover:bg-[#b8965a] hover:text-[#0c0b09] transition-all duration-500"
           >
             Book Appointment
           </Link>

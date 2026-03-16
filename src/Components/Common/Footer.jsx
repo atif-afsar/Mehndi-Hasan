@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
-import { Share2, Mail, MapPin, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { Instagram, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 30 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, delay: i * 0.1, ease: "easeOut" },
+    transition: { duration: 0.8, delay: i * 0.1, ease: [0.215, 0.61, 0.355, 1] },
   }),
 };
 
@@ -15,276 +14,125 @@ const brandLinks = ["Our Story", "Craftsmanship", "Press & Media", "Testimonials
 const serviceLinks = ["Bespoke Tailoring", "Wedding Consultations", "Corporate Gifting", "Global Shipping"];
 
 export default function Footer() {
-  const [expandedBrand, setExpandedBrand] = useState(false);
-  const [expandedServices, setExpandedServices] = useState(false);
-
   return (
-    <footer
-      className="w-full"
-      style={{
-        background: "linear-gradient(180deg, #0a1a12 0%, #071310 100%)",
-        fontFamily: "'Cormorant Garamond', serif",
-      }}
-    >
-      {/* Top hairline */}
-      <div
-        className="w-full h-px"
-        style={{
-          background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.3) 30%, rgba(201,168,76,0.3) 70%, transparent)",
-        }}
-      />
-
-      <div className="max-w-6xl mx-auto px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-
-          {/* Col 1 — Brand */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            custom={0}
-            className="flex flex-col gap-5"
+    <footer className="relative w-full bg-[#051c12] pt-20 pb-10 overflow-hidden">
+      {/* Decorative Background Element */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-gradient-to-r from-transparent via-[#c5a059]/30 to-transparent" />
+      
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        {/* Top Section: Brand Statement */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
+          
+          {/* Brand Identity */}
+          <motion.div 
+            custom={0} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="lg:col-span-5 flex flex-col items-start"
           >
-            {/* Logo mark */}
-            <div className="flex items-center gap-3">
-              <img
-                src="/logo.png"
-                alt="Mehdi Hasan Logo"
-                className="w-9 h-9 object-contain"
-              />
-              <span
-                className="text-xl font-semibold tracking-wide"
-                style={{ color: "#c9a84c", fontFamily: "'Playfair Display', serif" }}
-              >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 border border-[#c5a059]/40 rounded-full flex items-center justify-center p-2">
+                <img src="/logo.png" alt="MH" className="w-full h-full object-contain brightness-125" />
+              </div>
+              <h2 className="text-[#c5a059] font-serif text-3xl tracking-widest uppercase">
                 Mehdi Hasan
-              </span>
+              </h2>
             </div>
-
-            <p
-              className="text-sm leading-relaxed"
-              style={{ color: "rgba(255,255,255,0.45)", maxWidth: "220px" }}
-            >
-              Defining luxury through traditional craftsmanship and timeless design since 1972.
+            <p className="text-white/50 font-serif italic text-lg leading-relaxed max-w-md">
+              "Every stitch tells a story of heritage, every garment a legacy of sartorial excellence."
             </p>
-
-            {/* Social icons */}
-            <div className="flex items-center gap-4 mt-1">
-              {[Share2, Mail, MapPin].map((Icon, i) => (
-                <motion.button
-                  key={i}
-                  whileHover={{ scale: 1.15, color: "#c9a84c" }}
-                  whileTap={{ scale: 0.93 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 18 }}
-                  className="p-0 bg-transparent border-none cursor-pointer"
-                  style={{ color: "rgba(255,255,255,0.4)" }}
+            
+            <div className="flex gap-6 mt-8">
+              {[Instagram, Mail, Phone].map((Icon, i) => (
+                <motion.a 
+                  key={i} href="#" 
+                  whileHover={{ y: -3, color: "#c5a059" }}
+                  className="text-white/30 transition-colors"
                 >
-                  <Icon size={17} />
-                </motion.button>
+                  <Icon size={20} strokeWidth={1.5} />
+                </motion.a>
               ))}
             </div>
           </motion.div>
 
-          {/* Col 2 — The Brand (Collapsible on mobile) */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            custom={1}
-          >
-            <button
-              onClick={() => setExpandedBrand(!expandedBrand)}
-              className="md:pointer-events-none w-full md:w-auto flex items-center justify-between md:justify-start gap-2 mb-5"
-            >
-              <h4
-                className="text-base font-semibold tracking-wide"
-                style={{ color: "#fff", fontFamily: "'Playfair Display', serif" }}
-              >
-                The Brand
-              </h4>
-              <ChevronDown
-                size={18}
-                className="md:hidden transition-transform duration-300"
-                style={{
-                  transform: expandedBrand ? "rotate(180deg)" : "rotate(0deg)",
-                  color: "#c9a84c",
-                }}
-              />
-            </button>
-            <ul
-              className={`flex flex-col gap-3 overflow-hidden transition-all duration-300 md:flex md:flex-col md:gap-3 md:overflow-visible
-              ${expandedBrand ? "max-h-96" : "max-h-0 md:max-h-96"}`}
-            >
-              {brandLinks.map((link) => (
-                <li key={link}>
-                  <motion.a
-                    href="#"
-                    whileHover={{ x: 4, color: "#c9a84c" }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="text-sm inline-block"
-                    style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none" }}
-                  >
-                    {link}
-                  </motion.a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Col 3 — Services (Collapsible on mobile) */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            custom={2}
-          >
-            <button
-              onClick={() => setExpandedServices(!expandedServices)}
-              className="md:pointer-events-none w-full md:w-auto flex items-center justify-between md:justify-start gap-2 mb-5"
-            >
-              <h4
-                className="text-base font-semibold tracking-wide"
-                style={{ color: "#fff", fontFamily: "'Playfair Display', serif" }}
-              >
-                Services
-              </h4>
-              <ChevronDown
-                size={18}
-                className="md:hidden transition-transform duration-300"
-                style={{
-                  transform: expandedServices ? "rotate(180deg)" : "rotate(0deg)",
-                  color: "#c9a84c",
-                }}
-              />
-            </button>
-            <ul
-              className={`flex flex-col gap-3 overflow-hidden transition-all duration-300 md:flex md:flex-col md:gap-3 md:overflow-visible
-              ${expandedServices ? "max-h-96" : "max-h-0 md:max-h-96"}`}
-            >
-              {serviceLinks.map((link) => (
-                <li key={link}>
-                  <motion.a
-                    href="#"
-                    whileHover={{ x: 4, color: "#c9a84c" }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="text-sm inline-block"
-                    style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none" }}
-                  >
-                    {link}
-                  </motion.a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Col 4 — Flagship Studio */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            custom={3}
-            className="flex flex-col gap-4"
-          >
-            <h4
-              className="text-base font-semibold tracking-wide"
-              style={{ color: "#fff", fontFamily: "'Playfair Display', serif" }}
-            >
-              Flagship Studio
-            </h4>
-
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
-              12/A Royal Enclave, Heritage District
-              <br />
-              London, United Kingdom
-            </p>
-
-            <div className="flex flex-col gap-1 text-sm">
-              <span style={{ color: "rgba(255,255,255,0.45)" }}>
-                T:{" "}
-                <motion.a
-                  href="tel:+442079460123"
-                  whileHover={{ color: "#c9a84c" }}
-                  style={{ color: "#c9a84c", textDecoration: "none" }}
-                >
-                  +44 20 7946 0123
-                </motion.a>
-              </span>
-              <span style={{ color: "rgba(255,255,255,0.45)" }}>
-                E:{" "}
-                <motion.a
-                  href="mailto:concierge@mehdihasan.com"
-                  whileHover={{ color: "#e8c96a" }}
-                  style={{ color: "#c9a84c", textDecoration: "none" }}
-                >
-                  concierge@mehdihasan.com
-                </motion.a>
-              </span>
-            </div>
-
-            {/* Studio image */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="overflow-hidden mt-1"
-              style={{ borderRadius: "2px" }}
-            >
-              <img
-                src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=400&q=80"
-                alt="Flagship Studio"
-                className="w-full object-cover"
-                style={{ height: "90px", filter: "grayscale(60%) brightness(0.75)" }}
-              />
+          {/* Navigation Links */}
+          <div className="lg:col-span-4 grid grid-cols-2 gap-8">
+            <motion.div custom={1} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <h4 className="text-[#c5a059] font-sans text-[10px] tracking-[0.3em] uppercase mb-8">The Brand</h4>
+              <ul className="space-y-4">
+                {brandLinks.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="group text-white/60 text-sm font-light hover:text-white transition-colors flex items-center gap-2">
+                      <span>{link}</span>
+                      <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-all -translate-y-1" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
+
+            <motion.div custom={2} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <h4 className="text-[#c5a059] font-sans text-[10px] tracking-[0.3em] uppercase mb-8">Services</h4>
+              <ul className="space-y-4">
+                {serviceLinks.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="group text-white/60 text-sm font-light hover:text-white transition-colors flex items-center gap-2">
+                      <span>{link}</span>
+                      <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-all -translate-y-1" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Contact / Location */}
+          <motion.div 
+            custom={3} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="lg:col-span-3 space-y-8"
+          >
+            <div>
+              <h4 className="text-[#c5a059] font-sans text-[10px] tracking-[0.3em] uppercase mb-6 flex items-center gap-2">
+                <MapPin size={12} /> Flagship Studio
+              </h4>
+              <p className="text-white/50 text-sm font-light leading-loose tracking-wide">
+                12/A Royal Enclave, Heritage District<br />
+                London, United Kingdom
+              </p>
+            </div>
+            
+            <div className="pt-4 border-t border-white/5 flex flex-col gap-2">
+              <a href="mailto:concierge@mehdihasan.com" className="text-white/80 hover:text-[#c5a059] transition-colors font-serif italic tracking-wide">
+                concierge@mehdihasan.com
+              </a>
+              <span className="text-white/30 text-xs tracking-widest">+44 20 7946 0123</span>
+            </div>
           </motion.div>
         </div>
 
-        {/* Bottom divider */}
-        <div
-          className="w-full h-px my-10"
-          style={{ background: "rgba(255,255,255,0.07)" }}
-        />
-
-        {/* Bottom bar */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={4}
-          className="flex flex-col items-center gap-3 text-center"
-        >
-          <p
-            className="text-xs tracking-[0.2em] uppercase"
-            style={{ color: "rgba(255,255,255,0.3)" }}
-          >
+        {/* Bottom Bar */}
+        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-white/20 text-[10px] tracking-[0.3em] uppercase">
             © 2024 Mehdi Hasan Tailors. All Rights Reserved.
           </p>
-          <div className="flex items-center gap-6">
-            {["Privacy Policy", "Terms of Service"].map((item) => (
-              <motion.a
-                key={item}
-                href="#"
-                whileHover={{ color: "#c9a84c" }}
-                className="text-xs tracking-[0.15em] uppercase"
-                style={{ color: "rgba(255,255,255,0.3)", textDecoration: "none" }}
-              >
+          
+          <div className="flex gap-8">
+            {["Privacy", "Terms", "Cookies"].map((item) => (
+              <a key={item} href="#" className="text-white/20 hover:text-[#c5a059] text-[10px] tracking-[0.2em] uppercase transition-colors">
                 {item}
-              </motion.a>
+              </a>
             ))}
           </div>
-        </motion.div>
+          
+          {/* "Back to top" aesthetic circle */}
+          <button 
+            onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+            className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/30 hover:border-[#c5a059] hover:text-[#c5a059] transition-all"
+          >
+            <motion.div animate={{ y: [2, -2, 2] }} transition={{ repeat: Infinity, duration: 2 }}>
+              ↑
+            </motion.div>
+          </button>
+        </div>
       </div>
-
-      {/* Bottom hairline */}
-      <div
-        className="w-full h-px"
-        style={{
-          background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.15) 50%, transparent)",
-        }}
-      />
     </footer>
   );
 }
