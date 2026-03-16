@@ -6,7 +6,7 @@ const HeritageHero = () => {
       {/* Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center transition-transform duration-[20s] scale-110 hover:scale-100 opacity-40 grayscale"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1594932224828-b4b059b6f68c?auto=format&fit=crop&q=80&w=2000')" }}
+        style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAU2jQSR-pcuXVLYiHKnszX51uHt1FyoxXawKWxFxa9zb4cGApqwfR-WPEneWkLLlC10LNHxK9b8mXHcJAukpsqLHBJYlrVDrJRWp6H9pUDAfpF2AaD2ZxbBceqBr2fKpts9xPpnnb-gxaO8vlv_SYsgrILZISmZujlV_tH_A4iy42ayZuKHZBdL2Qxvbck1RPcSWwtKgzz3RyPOob63Wk7XgAUzWU-TrZCzOqJA35ikAKVV_UEJNi8zM2L_A9qKjHue27FGbhkrWdz')" }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a1310] via-transparent to-[#0a1310]"></div>
       <div className="absolute inset-0 bg-black/40"></div>
