@@ -5,11 +5,14 @@ import Heritage from './Pages/Heritage'
 import Collections from './Pages/Collections'
 import Bespoke from './Pages/Bespoke'
 import Contact from './Pages/Contact'
+import Gallery from './Pages/Gallery'
 import Navbar from './Components/Common/Navbar'
+import ScrollToTop from './Components/Common/ScrollToTop'
 
 const App = () => {
   return (
     <div className="bg-black">
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -17,6 +20,7 @@ const App = () => {
         <Route path="/collections" element={<Collections />} />
         <Route path="/bespoke" element={<Bespoke />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
     </div>
   )
