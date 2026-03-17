@@ -5,6 +5,7 @@ import Footer from '../Components/Common/Footer'
 import Heritage from '../Components/Home/OurHeritage'
 import BespokeExperience from '../Components/Home/BespokeExperience'
 import HeritageCTA from '../Components/Home/Cta'
+import TestimonialSection from '../Components/Home/Testimonials'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Heritage />
       <FeaturedCollections />
       <BespokeExperience />
+      <TestimonialSection />
       <HeritageCTA />
       <Footer />
     </div>
