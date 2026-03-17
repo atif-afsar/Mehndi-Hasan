@@ -33,7 +33,7 @@ export default function Footer() {
                 <img src="/logo.png" alt="MH" className="w-full h-full object-contain brightness-125" />
               </div>
               <h2 className="text-[#c5a059] font-serif text-3xl tracking-widest uppercase">
-                Mehdi Hasan
+               Mehdi Hasan Tailor
               </h2>
             </div>
             <p className="text-white/50 font-serif italic text-lg leading-relaxed max-w-md">
@@ -111,7 +111,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-white/20 text-[10px] tracking-[0.3em] uppercase">
-            © 2024 Mehdi Hasan Tailors. All Rights Reserved.
+            © 2026 Mehdi Hasan Tailors. All Rights Reserved.
           </p>
           
           <div className="flex gap-8">
@@ -121,16 +121,6 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          
-          {/* "Back to top" aesthetic circle */}
-          <button 
-            onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
-            className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/30 hover:border-[#c5a059] hover:text-[#c5a059] transition-all"
-          >
-            <motion.div animate={{ y: [2, -2, 2] }} transition={{ repeat: Infinity, duration: 2 }}>
-              ↑
-            </motion.div>
-          </button>
         </div>
       </div>
     </footer>

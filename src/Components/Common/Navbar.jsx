@@ -49,7 +49,7 @@ const Navbar = () => {
           
           <div className="flex flex-col">
             <span className="font-serif text-[14px] md:text-[18px] tracking-[0.25em] text-white uppercase leading-tight group-hover:text-[#b8965a] transition-colors duration-500">
-              Mehdi Hasan
+              Mehdi Hasan Tailor
             </span>
             <span className="font-sans font-normal text-[10px] md:text-[9px] tracking-[0.5em] text-[#b8965a] uppercase">
               Est. 1972
@@ -99,7 +99,8 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[1000] bg-[#0c0b09] flex flex-col p-10"
+            className="fixed inset-0 z-[1000] bg-[#0c0b09] flex flex-col p-10 shadow-none"
+            style={{ boxShadow: "none" }}
           >
             {/* Close Button Inside Drawer */}
             <div className="flex justify-end">

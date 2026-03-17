@@ -32,15 +32,15 @@ const LegacyStory = () => {
 
         {/* Right Image Grid */}
         <div className="flex-1 grid grid-cols-2 gap-4">
-          <div className="aspect-[4/5] bg-gray-900 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1594938384824-0227160503ba?auto=format&fit=crop&q=80&w=800" alt="Suit" className="w-full h-full object-cover grayscale opacity-80" />
+          <div className="aspect-[4/5] overflow-hidden">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoXUJ861zHg0Ms2zFiL0kvyj3uKtFuk9RPsDrI_sDtiHeh4J3HIdT-CiG514MeiTqC4ngrZD8Dm-XueCoTKbuSBNJat0ctd1axotaYmxLhJOghVUZA5igwhOq_WmhF8NCJf2xbbBOdpiEpKJ8f15kgs-9NoFQtbM5ZWPX-1acZHP-dwPIp8sOx7isxXmQWxleqKV9dPTC4jKlt12rKM5P4bNjomnDEf72Lruz08MIDxFYfiEAMSFty2FqYGFTR9SuNCv0XTTSm1s1X" alt="Suit" className="w-full h-full object-cover" />
           </div>
-          <div className="aspect-[4/5] bg-gray-900 overflow-hidden">
-             <img src="https://images.unsplash.com/photo-1593032465175-481ac7f40147?auto=format&fit=crop&q=80&w=800" alt="Fabric" className="w-full h-full object-cover" />
+          <div className="aspect-[4/5] overflow-hidden">
+             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9P67rZMf7Sac48MIbPblxBrSElQrMfjWb-k6VUg9rt2KgwCtRGlQ9GQEiZz9vktL68ojrqwm8a17HuQ7WO7w9BK5IxbxP-q--tLHFPRrnrVESqkb2obDtn0oOx71kUFjqbWtzI8Uo9vYKi1Bk4cCoGyJ40h9PejWx3ERgbvcRyoDyfNzpk2t_W-9XdIHcKJQfADWtFVbRCqM1E3qpTDIkQwsyk5jw-mRZpRSEVR2_4pwclienXiL0wNN5kXmMmzc5tRSO2ALa7IGB" alt="Fabric" className="w-full h-full object-cover" />
           </div>
           <div className="aspect-[4/5] bg-[#3a4539]"></div> {/* Dark olive block */}
-          <div className="aspect-[4/5] bg-gray-900 overflow-hidden">
-             <img src="https://images.unsplash.com/photo-1598460350580-e41209325da2?auto=format&fit=crop&q=80&w=800" alt="Store" className="w-full h-full object-cover opacity-60" />
+          <div className="aspect-[4/5] overflow-hidden">
+             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuArdwPZRGD-Whlz4fGnNScysEk6yczVYOl2HS1YswylLfu-DXBWVq9J7ZUND-CAy8eXxQw5KTFCy57j-AJXZYIGQJ5DxWIGUhJeppVUJ9KA3D7qatP_ZieDLle8fFisxepZHIirWXiIzwOJfr1CVjK44AbPTwLYutPCyaT1BhjL9kP2i7Vt1RVv6cOKQVT06dUEbtuwhMAD1i68mKsumqCKGG-EmqTMC3KXnQ5XO92KfATuL_IeSLmctGdx-TNrEY0NhrugKa8X8TGd" alt="Store" className="w-full h-full object-cover opacity-60" />
           </div>
         </div>
 
