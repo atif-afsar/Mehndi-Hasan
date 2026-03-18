@@ -42,7 +42,7 @@ const Navbar = () => {
             <div className="absolute inset-0 border border-[#b8965a]/30 rounded-full group-hover:scale-110 group-hover:border-[#b8965a] transition-all duration-700 ease-out" />
             
             {/* Logo Image / Monogram */}
-            <div className="relative w-8 h-8 md:w-10 md:h-10 overflow-hidden rounded-full">
+            <div className="relative w-14 h-14 md:w-14 md:h-14 overflow-hidden rounded-full">
                <img src="/logo.png" alt="M" className="w-full h-full object-contain filter brightness-110" />
             </div>
           </div>
