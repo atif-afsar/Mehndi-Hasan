@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Instagram, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
 const fadeUp = {
@@ -10,7 +11,12 @@ const fadeUp = {
   }),
 };
 
-const brandLinks = ["Our Story", "Craftsmanship", "Press & Media", "Testimonials"];
+const brandLinks = [
+  { name: "Collections", path: "/collections" },
+  { name: "Bespoke", path: "/bespoke" },
+  { name: "Heritage", path: "/heritage" },
+  { name: "Gallery", path: "/gallery" },
+];
 const serviceLinks = ["Bespoke Tailoring", "Wedding Consultations", "Corporate Gifting", "Global Shipping"];
 
 export default function Footer() {
@@ -29,7 +35,7 @@ export default function Footer() {
             className="lg:col-span-5 flex flex-col items-start"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 border border-[#c5a059]/40 rounded-full flex items-center justify-center p-2">
+              <div className="w-14 h-14 border border-[#c5a059]/40 rounded-full flex items-center justify-center">
                 <img src="/logo.png" alt="MH" className="w-full h-full object-contain brightness-125" />
               </div>
               <h2 className="text-[#c5a059] font-serif text-3xl tracking-widest uppercase">
@@ -59,11 +65,11 @@ export default function Footer() {
               <h4 className="text-[#c5a059] font-sans text-[10px] tracking-[0.3em] uppercase mb-8">The Brand</h4>
               <ul className="space-y-4">
                 {brandLinks.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="group text-white/60 text-sm font-light hover:text-white transition-colors flex items-center gap-2">
-                      <span>{link}</span>
+                  <li key={link.name}>
+                    <Link to={link.path} className="group text-white/60 text-sm font-light hover:text-white transition-colors flex items-center gap-2">
+                      <span>{link.name}</span>
                       <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-all -translate-y-1" />
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -115,11 +121,12 @@ export default function Footer() {
           </p>
           
           <div className="flex gap-8">
-            {["Privacy", "Terms", "Cookies"].map((item) => (
-              <a key={item} href="#" className="text-white/20 hover:text-[#c5a059] text-[10px] tracking-[0.2em] uppercase transition-colors">
-                {item}
-              </a>
-            ))}
+            <Link to="/privacy" className="text-white/20 hover:text-[#c5a059] text-[10px] tracking-[0.2em] uppercase transition-colors">
+              Privacy
+            </Link>
+            <Link to="/terms" className="text-white/20 hover:text-[#c5a059] text-[10px] tracking-[0.2em] uppercase transition-colors">
+              Terms
+            </Link>
           </div>
         </div>
       </div>

@@ -9,7 +9,8 @@ import Gallery from './Pages/Gallery'
 import Navbar from './Components/Common/Navbar'
 import ScrollToTop from './Components/Common/ScrollToTop'
 import Loader from './Components/Common/Loader'
-
+import Privacy from './Components/Common/Privacy'
+import Terms from './Components/Common/Terms'
 const App = () => {
   const [showLoader, setShowLoader] = useState(true);
 
@@ -34,6 +35,8 @@ const App = () => {
         <Route path="/bespoke" element={<Bespoke />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
     </div>
   )
