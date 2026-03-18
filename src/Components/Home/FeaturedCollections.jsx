@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FeaturedCollections = () => {
   const collections = [
@@ -40,15 +41,16 @@ const FeaturedCollections = () => {
               <span className="italic text-[#c5a059]">Collections</span>
             </h2>
           </div>
-          <p className="text-[#c5a059] text-[10px] tracking-[0.3em] uppercase cursor-pointer hover:text-white transition-all duration-300 border-b border-[#c5a059]/20 hover:border-white pb-1 font-bold">
+          <Link to="/collections" className="text-[#c5a059] text-[10px] tracking-[0.3em] uppercase cursor-pointer hover:text-white transition-all duration-300 border-b border-[#c5a059]/20 hover:border-white pb-1 font-bold">
             View All Series
-          </p>
+          </Link>
         </header>
 
         {/* Grid — 1 col mobile, 2 col desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-x-12 md:gap-y-20">
           {collections.map((item, idx) => (
-            <div
+            <Link
+              to="/collections"
               key={idx}
               className="group cursor-pointer flex flex-col md:block border-b border-white/5 md:border-none py-10 md:py-0 first:pt-0 last:border-none md:last:border-none"
             >
@@ -89,7 +91,7 @@ const FeaturedCollections = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
