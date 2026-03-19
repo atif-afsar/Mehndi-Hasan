@@ -16,7 +16,7 @@ const allProducts = [
   ...generateProducts('image', 33, 'Sherwanis'),
   ...generateProducts('suit', 10, 'Suits'),
   ...generateProducts('celeb', 9, 'Celebs'),
-  ...generateProducts('kurta', 1, 'kurta'),
+  ...generateProducts('kurta', 9, 'kurta'),
   ...generateProducts('awards', 10, 'Awards'),
 ];
 
