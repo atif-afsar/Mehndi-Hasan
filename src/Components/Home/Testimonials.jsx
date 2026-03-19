@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const testimonials = [
@@ -21,6 +21,8 @@ const testimonials = [
 ];
 
 const TestimonialSection = () => {
+  const [isPaused, setIsPaused] = useState(false);
+  
   // We double the array to ensure a seamless infinite loop
   const duplicatedTestimonials = [...testimonials, ...testimonials];
 
@@ -34,14 +36,20 @@ const TestimonialSection = () => {
       </div>
 
       {/* Marquee Container with Gradient Mask */}
-      <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+      <div 
+        className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+      >
         <motion.div
           className="flex gap-8 pr-8"
-          animate={{ x: ["0%", "-50%"] }}
+          animate={{ x: isPaused ? "0%" : "-50%" }}
           transition={{
             ease: "linear",
             duration: 30,
-            repeat: Infinity,
+            repeat: isPaused ? 0 : Infinity,
           }}
         >
           {duplicatedTestimonials.map((item, idx) => (

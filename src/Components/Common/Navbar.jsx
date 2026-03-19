@@ -22,7 +22,9 @@ const Navbar = () => {
     { name: "Collections", path: "/collections" },
     { name: "Bespoke", path: "/bespoke" },
     { name: "Heritage", path: "/heritage" },
+    { name: "Journals", path: "/journals" },
     { name: "Gallery", path: "/gallery" },
+    
   ];
 
   return (
