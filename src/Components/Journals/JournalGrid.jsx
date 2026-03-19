@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const journals = [
   {
-    id: 1,
+    id: "1",
     category: "HERITAGE",
     title: "The Art of the Aligarh Sherwani: A Legacy in Every Stitch",
     excerpt: "Discover the centuries-old tradition and technical mastery behind our signature sherwanis. A deep dive into the heritage that defines our craft.",
@@ -13,7 +14,7 @@ const journals = [
     readTime: "8 MIN READ"
   },
   {
-    id: 2,
+    id: "2",
     category: "CRAFTSMANSHIP",
     title: "The Secret of Gold Zardosi: Our Traditional Embroidery",
     excerpt: "An exploration of the intricate art of gold thread embroidery. Learn how our artisans preserve this ancient technique with modern precision.",
@@ -22,7 +23,7 @@ const journals = [
     readTime: "6 MIN READ"
   },
   {
-    id: 3,
+    id: "3",
     category: "STYLE",
     title: "Mastering the Fit: The Bespoke Experience Explained",
     excerpt: "Understanding the meticulous process of creating a garment that fits perfectly. From measurement to final stitch, we reveal our bespoke methodology.",
@@ -31,7 +32,7 @@ const journals = [
     readTime: "7 MIN READ"
   },
   {
-    id: 4,
+    id: "4",
     category: "HERITAGE",
     title: "Choosing Your Wedding Attire: A Guide for the Modern Groom",
     excerpt: "Navigating the nuances of traditional elegance in contemporary times. Expert advice on selecting the perfect wedding ensemble.",
@@ -42,6 +43,7 @@ const journals = [
 ];
 
 const JournalGrid = () => {
+  const navigate = useNavigate();
   return (
     <section className="bg-[#0a1310] py-24 md:py-48 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
@@ -57,7 +59,8 @@ const JournalGrid = () => {
             <img 
               src={journals[0].image}
               alt={journals[0].title}
-              className="w-full h-full object-cover  hover:grayscale-0 hover:opacity-100 transition-all duration-1000"
+              onClick={() => navigate(`/journals/${journals[0].id}`)}
+              className="w-full h-full object-cover hover:grayscale-0 hover:opacity-100 transition-all duration-1000 cursor-pointer"
             />
             <div className="absolute inset-0 border border-white/10"></div>
           </div>
@@ -79,7 +82,10 @@ const JournalGrid = () => {
               <span className="text-[9px] tracking-[0.3em] uppercase text-gray-500 font-light">
                 {journals[0].readTime}
               </span>
-              <button className="group flex items-center gap-3 text-[#c5a059] text-[10px] tracking-[0.3em] uppercase font-bold hover:text-white transition-colors">
+              <button 
+                onClick={() => navigate(`/journals/${journals[0].id}`)}
+                className="group flex items-center gap-3 text-[#c5a059] text-[10px] tracking-[0.3em] uppercase font-bold hover:text-white transition-colors"
+              >
                 <span>Read Article</span>
                 <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
@@ -97,12 +103,13 @@ const JournalGrid = () => {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               viewport={{ once: true }}
               className="group cursor-pointer"
+              onClick={() => navigate(`/journals/${journal.id}`)}
             >
               <div className="relative overflow-hidden aspect-[4/5] mb-6">
                 <img 
                   src={journal.image}
                   alt={journal.title}
-                  className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+                  className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 cursor-pointer"
                 />
                 <div className="absolute inset-0 border border-white/10 group-hover:border-[#c5a059]/30 transition-colors"></div>
               </div>

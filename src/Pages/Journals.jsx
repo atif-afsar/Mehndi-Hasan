@@ -5,7 +5,7 @@ import Footer from '../Components/Common/Footer'
 
 const Journals = () => {
   return (
-    <main className="bg-[#0a1310]">
+    <main className="bg-[#0a1310] overflow-x-hidden">
       <JournalsHero />
       <JournalGrid />
       <Footer />

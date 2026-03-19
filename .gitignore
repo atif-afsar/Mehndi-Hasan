@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local MCP credentials/config (do not commit)
+.kiro/settings/mcp.json

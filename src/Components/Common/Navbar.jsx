@@ -54,7 +54,7 @@ const Navbar = () => {
               Mehdi Hasan Tailor
             </span>
             <span className="font-sans font-normal text-[10px] md:text-[9px] tracking-[0.5em] text-[#b8965a] uppercase">
-              Est. 1972
+              Est. 1944
             </span>
           </div>
         </Link>

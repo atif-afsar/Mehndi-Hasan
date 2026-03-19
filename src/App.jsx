@@ -6,6 +6,7 @@ import Collections from './Pages/Collections'
 import Bespoke from './Pages/Bespoke'
 import Contact from './Pages/Contact'
 import Journals from './Pages/Journals'
+import JournalDetail from './Components/Journals/JournalDetail'
 import Gallery from './Pages/Gallery'
 import Navbar from './Components/Common/Navbar'
 import ScrollToTop from './Components/Common/ScrollToTop'
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/collections" element={<Collections />} />
         <Route path="/bespoke" element={<Bespoke />} />
         <Route path="/journals" element={<Journals />} />
+        <Route path="/journals/:id" element={<JournalDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/privacy" element={<Privacy />} />
