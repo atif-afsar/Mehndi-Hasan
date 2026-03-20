@@ -1,31 +1,32 @@
 import React, { useState, useEffect } from "react";
 
-const generateProducts = (prefix, count, folder, ext = 'png') => {
+const generateProducts = (prefix, count, folder, ext = 'png', imagePath = null) => {
+  const path = imagePath || folder;
   return Array.from({ length: count }, (_, i) => ({
     id: `${folder}-${i + 1}`,
     title: `${folder} ${i + 1}`,
     category: folder,
     desc: `Exclusive ${folder} Collection`,
     price: "Price on Request",
-    image: `/${folder}/${prefix}${i + 1}.${ext}`,
+    image: `/${path}/${prefix}${i + 1}.${ext}`,
     badge: i === 0 ? "New Arrival" : null
   }));
 };
 
 const allProducts = [
   ...generateProducts('image', 33, 'Sherwanis'),
-  ...generateProducts('suit', 10, 'Suits'),
-  ...generateProducts('celeb', 9, 'Celebs'),
-  ...generateProducts('kurta', 9, 'kurta'),
-  ...generateProducts('awards', 10, 'Awards'),
+  ...generateProducts('suit', 20, 'Suits'),
+  ...generateProducts('kurta', 9, 'Kurta-Pajama', 'png', 'kurta'),
+  ...generateProducts('west', 16, 'Indo-west', 'png', 'Indo-west'),
 ];
 
 const categories = [
   { id: "Sherwanis", label: "Sherwanis" },
   { id: "Suits", label: "Suits" },
-  { id: "Celebs", label: "Celebs" },
-  { id: "kurta", label: "Kurta" },
-  { id: "Awards", label: "Awards" }
+  { id: "Kurta-Pajama", label: "Kurta-Pajama" },
+  { id: "Indo-west", label: "Indo-West" },
+  { id: "Juti", label: "Juti" },
+  { id: "Safa-Pagdi", label: "Safa/Pagdi" }
 ];
 
 const ProductGrid = () => {

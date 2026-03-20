@@ -9,7 +9,7 @@ const journals = [
     category: "HERITAGE",
     title: "The Art of the Aligarh Sherwani: A Legacy in Every Stitch",
     excerpt: "Discover the centuries-old tradition and technical mastery behind our signature sherwanis. A deep dive into the heritage that defines our craft.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDRba7ZnlT7x6efW70E0Siy4eP2ZkvwDrMb8O91E-3CxO711PaQrbk35WOKCKIMvTn6qwjlh2AWelljep7Kg3ig1CwHtCKx_Bn3qhOnW-G-fm2POhR0iCOGR5jCVetY54Qau7-0RvuYVeGnDwAxq5_GqMAqLyKsvo5U34nkd-Hjo9Epm4FXMO08Uh6pmxe7PRsDJvT_gru4tAN5ZUm3Ln9BrirrFMYks9EFJdhSakrw9dIxt515116XGnxTriB7SQFpQRSPyE2Mt9jh",
+    image: "/Sherwanis/image13.png",
     date: "MARCH 15, 2026",
     readTime: "8 MIN READ"
   },
