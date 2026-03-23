@@ -6,6 +6,7 @@ import Collections from './Pages/Collections'
 import Contact from './Pages/Contact'
 import Journals from './Pages/Journals'
 import JournalDetail from './Components/Journals/JournalDetail'
+import ProductDetail from './Components/Collections/ProductDetail'
 import Gallery from './Pages/Gallery'
 import Navbar from './Components/Common/Navbar'
 import ScrollToTop from './Components/Common/ScrollToTop'
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/heritage" element={<Heritage />} />
         <Route path="/collections" element={<Collections />} />
+        <Route path="/collections/:id" element={<ProductDetail />} />
         <Route path="/journals" element={<Journals />} />
         <Route path="/journals/:id" element={<JournalDetail />} />
         <Route path="/contact" element={<Contact />} />

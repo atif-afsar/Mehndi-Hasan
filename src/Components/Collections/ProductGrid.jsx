@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const generateProducts = (prefix, count, folder, ext = 'png', imagePath = null) => {
   const path = imagePath || folder;
@@ -30,6 +31,7 @@ const categories = [
 ];
 
 const ProductGrid = () => {
+  const navigate = useNavigate();
   const [filter, setFilter] = useState("Sherwanis");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8; // Number of items per page
@@ -79,7 +81,7 @@ const ProductGrid = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10">
           {currentItems.map((product) => (
-            <div key={product.id} className="group cursor-pointer flex flex-col">
+            <div key={product.id} className="group cursor-pointer flex flex-col" onClick={() => navigate(`/collections/${product.id}`)}>
               <div className="aspect-[3/4] overflow-hidden bg-[#0d1815] relative mb-4 rounded-sm shadow-xl border border-white/5 group-hover:border-[#c5a059]/30 transition-colors">
                 <img 
                   src={product.image} 
