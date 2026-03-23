@@ -14,7 +14,8 @@ const fadeUp = {
 const brandLinks = [
   { name: "Collections", path: "/collections" },
   { name: "Bespoke", path: "/bespoke" },
-  { name: "Heritage", path: "/heritage" },
+  { name: "Journals", path: "/journals" },
+  { name: "Measurements", path: "/measurements" },
   { name: "Gallery", path: "/gallery" },
 ];
 const serviceLinks = ["Bespoke Tailoring", "Wedding Consultations", "Corporate Gifting", "Global Shipping"];

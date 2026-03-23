@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home'
 import Heritage from './Pages/Heritage'
 import Collections from './Pages/Collections'
-import Bespoke from './Pages/Bespoke'
 import Contact from './Pages/Contact'
 import Journals from './Pages/Journals'
 import JournalDetail from './Components/Journals/JournalDetail'
@@ -13,6 +12,7 @@ import ScrollToTop from './Components/Common/ScrollToTop'
 import Loader from './Components/Common/Loader'
 import Privacy from './Components/Common/Privacy'
 import Terms from './Components/Common/Terms'
+import Measurements from './Pages/Measurements'
 const App = () => {
   const [showLoader, setShowLoader] = useState(true);
 
@@ -34,11 +34,11 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/heritage" element={<Heritage />} />
         <Route path="/collections" element={<Collections />} />
-        <Route path="/bespoke" element={<Bespoke />} />
         <Route path="/journals" element={<Journals />} />
         <Route path="/journals/:id" element={<JournalDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/measurements" element={<Measurements />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
       </Routes>
