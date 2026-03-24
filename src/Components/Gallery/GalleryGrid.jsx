@@ -3,16 +3,25 @@ import React, { useState } from 'react';
 const GalleryGrid = () => {
     const [activeFilter, setActiveFilter] = useState('ALL WORK');
 
-    const filters = ['ALL WORK', 'HIGH FASHION', 'AVANT-GARDE', 'MINIMALIST', 'VINTAGE'];
+    const filters = ['ALL WORK', 'AWARDS', 'CELEBS'];
 
-    const images = [
-        { id: 1, src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop", style: "HIGH FASHION" },
-        { id: 2, src: "https://images.unsplash.com/photo-1542596594-649edbc13630?q=80&w=1974&auto=format&fit=crop", style: "MINIMALIST" },
-        { id: 3, src: "https://images.unsplash.com/photo-1549439602-43ebca2327af?q=80&w=2070&auto=format&fit=crop", style: "AVANT-GARDE" },
-        { id: 4, src: "https://images.unsplash.com/photo-1485230405346-71acb9518d9c?q=80&w=2097&auto=format&fit=crop", style: "VINTAGE" },
-        { id: 5, src: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1964&auto=format&fit=crop", style: "HIGH FASHION" },
-        { id: 6, src: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1920&auto=format&fit=crop", style: "MINIMALIST" },
-    ];
+    // Generate Awards images
+    const awardsImages = Array.from({ length: 10 }, (_, i) => ({
+        id: `awards-${i + 1}`,
+        src: `/Awards/awards${i + 1}.png`,
+        style: "AWARDS",
+        title: `Award ${i + 1}`
+    }));
+
+    // Generate Celebs images
+    const celebsImages = Array.from({ length: 9 }, (_, i) => ({
+        id: `celeb-${i + 1}`,
+        src: `/Celebs/celeb${i + 1}.png`,
+        style: "CELEBS",
+        title: `Celebrity ${i + 1}`
+    }));
+
+    const images = [...awardsImages, ...celebsImages];
 
   return (
     <section className="bg-[#0f110f] w-full px-6 md:px-14 py-12">
@@ -49,13 +58,20 @@ const GalleryGrid = () => {
 
         {/* 3 Col Image Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {images.map((img) => (
-                <div key={img.id} className="aspect-square relative group overflow-hidden bg-[#1a1d1a] border border-white/5">
+            {images
+                .filter(img => activeFilter === 'ALL WORK' || img.style === activeFilter)
+                .map((img) => (
+                <div key={img.id} className="relative group overflow-hidden bg-[#1a1d1a] border border-white/5 cursor-pointer rounded-sm">
                     <img 
                         src={img.src} 
-                        alt="Editorial photography" 
-                        className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                        alt={img.title} 
+                        className="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                        onError={(e) => { e.target.style.display = 'none'; }}
                     />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6">
+                        <p className="text-white text-sm font-light tracking-wider uppercase">{img.title}</p>
+                        <p className="text-[#b8965a] text-xs tracking-widest uppercase mt-1">{img.style}</p>
+                    </div>
                 </div>
             ))}
         </div>

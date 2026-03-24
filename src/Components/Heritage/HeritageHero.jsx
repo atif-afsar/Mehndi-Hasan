@@ -6,10 +6,10 @@ const HeritageHero = () => {
       {/* Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center transition-transform duration-[20s] scale-110 hover:scale-100"
-        style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAU2jQSR-pcuXVLYiHKnszX51uHt1FyoxXawKWxFxa9zb4cGApqwfR-WPEneWkLLlC10LNHxK9b8mXHcJAukpsqLHBJYlrVDrJRWp6H9pUDAfpF2AaD2ZxbBceqBr2fKpts9xPpnnb-gxaO8vlv_SYsgrILZISmZujlV_tH_A4iy42ayZuKHZBdL2Qxvbck1RPcSWwtKgzz3RyPOob63Wk7XgAUzWU-TrZCzOqJA35ikAKVV_UEJNi8zM2L_A9qKjHue27FGbhkrWdz')" }}
+        style={{ backgroundImage: "url('/heritage.png')" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1310] via-transparent to-[#0a1310]"></div>
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1310]/80 via-black/50 to-[#0a1310]/90"></div>
+      <div className="absolute inset-0 bg-black/60"></div>
       
       <div className="relative text-center z-10 px-6 max-w-5xl pt-20">
         <div className="flex flex-col items-center mb-8">
