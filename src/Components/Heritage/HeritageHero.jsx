@@ -26,9 +26,8 @@ const HeritageHero = () => {
           defining the wardrobe of discerning gentlemen for over seven decades.
         </p>
         <div className="flex justify-center gap-10">
-            <span className="text-[9px] tracking-[0.4em] text-gray-500 uppercase font-bold">Lahore</span>
-            <span className="text-[9px] tracking-[0.4em] text-gray-500 uppercase font-bold">London</span>
-            <span className="text-[9px] tracking-[0.4em] text-gray-500 uppercase font-bold">Dubai</span>
+            <span className="text-[9px] tracking-[0.4em] text-gray-500 uppercase font-bold">Aligarh</span>
+            <span className="text-[9px] tracking-[0.4em] text-gray-500 uppercase font-bold">Delhi</span>
         </div>
       </div>
     </section>
