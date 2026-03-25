@@ -116,12 +116,21 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-white/20 text-[10px] tracking-[0.3em] uppercase">
-            © 2026 Mehdi Hasan Tailors. All Rights Reserved.
+        <div className="pt-10 border-t border-white/5 flex flex-col xl:flex-row justify-between items-center gap-6">
+          <p className="text-white/20 text-[10px] tracking-[0.3em] uppercase w-full xl:w-1/3 text-center xl:text-left">
+            © 2026 Mehdi Hasan. All Rights Reserved.
           </p>
           
-          <div className="flex gap-8">
+          <div className="flex justify-center w-full xl:w-1/3">
+            <p className="text-white/40 text-[10px] font-sans tracking-[0.15em] uppercase flex items-center gap-2">
+              Website by <span className="text-white/80 font-medium">Atif Afsar</span> | 
+              <span className="bg-white/95 px-1.5 py-0.5 rounded-[2px] font-bold tracking-widest flex items-center shadow-sm ml-1" title="The Brandsway">
+                <span className="text-black text-[9px]">The Brands</span><span className="text-[#dc2626] text-[9px]">way</span>
+              </span>
+            </p>
+          </div>
+
+          <div className="flex gap-8 w-full xl:w-1/3 justify-center xl:justify-end">
             <Link to="/privacy" className="text-white/20 hover:text-[#c5a059] text-[10px] tracking-[0.2em] uppercase transition-colors">
               Privacy
             </Link>
