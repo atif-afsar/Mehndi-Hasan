@@ -7,12 +7,14 @@ import BespokeExperience from '../Components/Home/BespokeExperience'
 import HeritageCTA from '../Components/Home/Cta'
 import TestimonialSection from '../Components/Home/Testimonials'
 import HeritageInMotion from '../Components/Home/HeritageInMotion'
+import Marquee from '../Components/Home/Marquee'
 
 const Home = () => {
   return (
     <div className="bg-black">
       <Hero />
       <Heritage />
+      <Marquee />
       <FeaturedCollections />
       <BespokeExperience />
       <HeritageInMotion />
