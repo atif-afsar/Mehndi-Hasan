@@ -13,7 +13,7 @@ const Newsletter = () => {
             Receive exclusive first looks at our upcoming editorial series and limited print releases.
         </p>
 
-        <form className="w-full max-w-xl flex flex-col md:flex-row gap-4 justify-center items-stretch" onSubmit={(e) => e.preventDefault()}>
+        {/* <form className="w-full max-w-xl flex flex-col md:flex-row gap-4 justify-center items-stretch" onSubmit={(e) => e.preventDefault()}>
             <input 
                 type="email" 
                 placeholder="Your email address" 
@@ -26,7 +26,7 @@ const Newsletter = () => {
             >
                 SUBSCRIBE
             </button>
-        </form>
+        </form> */}
 
       </div>
     </section>

@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const HeritageCTA = () => {
   return (
@@ -11,9 +11,9 @@ const HeritageCTA = () => {
           Experience the ultimate in bespoke tailoring. Book your consultation with our master tailors today.
         </p>
         
-        <button className="px-12 py-5 bg-[#c5a059] text-black text-[11px] tracking-[0.3em] font-bold hover:bg-white transition-all duration-500 uppercase">
+        <Link to="/contact" className="inline-block px-12 py-5 bg-[#c5a059] text-black text-[11px] tracking-[0.3em] font-bold hover:bg-white transition-all duration-500 uppercase">
           Book a Consultation
-        </button>
+        </Link>
       </div>
     </section>
   );

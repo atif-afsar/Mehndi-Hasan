@@ -15,7 +15,7 @@ const ContactForm = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-12 md:gap-16">
             {[
-              { city: "Lahore, Pakistan", address: "Flagship Atelier, Anarkali Market, Lahore 54000", phone: "+92 42 3735 1234" },
+              { city: "Aligarh, Uttar Pradesh 202001", address: " Tasveer Mahal, opp. Head Post Office, Civil Lines", phone: "+91 082669 75779" },
             ].map((loc, i) => (
               <div key={i} className="group cursor-pointer">
                 <div className="flex items-center gap-4 mb-4">
@@ -31,8 +31,9 @@ const ContactForm = () => {
           <div className="pt-16 border-t border-white/5 text-center lg:text-left">
              <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.4em] mb-8 text-[#c5a059]/60">Digital Inquiries</h4>
              <div className="space-y-4">
-                <p className="text-gray-400 text-sm md:text-base font-light tracking-widest hover:text-[#c5a059] transition-colors cursor-pointer">atelier@mehdi-hasan.com</p>
-                <p className="text-gray-400 text-sm md:text-base font-light tracking-widest hover:text-[#c5a059] transition-colors cursor-pointer">custom@mehdi-hasan.com</p>
+              <a href="mailto:tailormehdihasan@gmail.com" className="text-white/80 hover:text-[#c5a059] transition-colors font-serif italic tracking-wide">
+                tailormehdihasan@gmail.com
+              </a>
              </div>
           </div>
 

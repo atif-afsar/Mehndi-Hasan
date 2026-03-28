@@ -2,7 +2,7 @@ import React from "react";
 
 const Timeline = () => {
   const events = [
-    { year: "1947", title: "The First Atelier", desc: "Late Mehdi Hasan opened his first workshop in Anarkali, Lahore, specializing in Sherwanis.", icon: "⎈" },
+    { year: "1944", title: "The First Atelier", desc: "Late Mehdi Hasan opened his first workshop in Anarkali, Lahore, specializing in Sherwanis.", icon: "⎈" },
     { year: "1965", title: "Royal Appointment", desc: "Appointed as the official tailors for diplomacy and heads of state visiting the region.", icon: "♛" },
     { year: "1990", title: "Global Presence", desc: "Opening our first international trunk show in London, bringing Eastern craft to the West.", icon: "◈" },
     { year: "Today", title: "Modern Mastery", desc: "Combining AI-assisted measurements with 100% hand-crafted assembly for a perfect fit.", icon: "✦" }
