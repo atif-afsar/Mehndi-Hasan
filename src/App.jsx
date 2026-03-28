@@ -14,6 +14,7 @@ import Loader from './Components/Common/Loader'
 import Privacy from './Components/Common/Privacy'
 import Terms from './Components/Common/Terms'
 import Measurements from './Pages/Measurements'
+import WhatsApp from './Components/Common/WhatsApp'
 const App = () => {
   const [showLoader, setShowLoader] = useState(true);
 
@@ -31,6 +32,7 @@ const App = () => {
       {showLoader && <Loader onComplete={handleLoaderComplete} />}
       <ScrollToTop />
       <Navbar />
+      <WhatsApp />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/heritage" element={<Heritage />} />

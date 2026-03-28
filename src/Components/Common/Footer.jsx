@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Instagram, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -13,7 +14,6 @@ const fadeUp = {
 
 const brandLinks = [
   { name: "Collections", path: "/collections" },
-  { name: "Bespoke", path: "/bespoke" },
   { name: "Journals", path: "/journals" },
   { name: "Measurements", path: "/measurements" },
   { name: "Gallery", path: "/gallery" },
@@ -48,15 +48,35 @@ export default function Footer() {
             </p>
             
             <div className="flex gap-6 mt-8">
-              {[Instagram, Mail, Phone].map((Icon, i) => (
-                <motion.a 
-                  key={i} href="#" 
-                  whileHover={{ y: -3, color: "#c5a059" }}
-                  className="text-white/30 transition-colors"
-                >
-                  <Icon size={20} strokeWidth={1.5} />
-                </motion.a>
-              ))}
+              <motion.a 
+                href="https://www.instagram.com/mehdihasanaligarh/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -3, color: "#c5a059" }}
+                className="text-white/30 transition-colors"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={20} />
+              </motion.a>
+              <motion.a 
+                href="https://www.facebook.com/Aligarhsherwani/"
+                rel="noopener noreferrer"
+                whileHover={{ y: -3, color: "#c5a059" }}
+                className="text-white/30 transition-colors"
+                aria-label="Facebook"
+              >
+                <FaFacebookF size={20} />
+              </motion.a>
+              <motion.a 
+                href="https://www.youtube.com/@mehdihasantailoraligarh43" 
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -3, color: "#c5a059" }}
+                className="text-white/30 transition-colors"
+                aria-label="YouTube"
+              >
+                <FaYoutube size={20} />
+              </motion.a>
             </div>
           </motion.div>
 
@@ -101,16 +121,15 @@ export default function Footer() {
                 <MapPin size={12} /> Flagship Studio
               </h4>
               <p className="text-white/50 text-sm font-light leading-loose tracking-wide">
-                12/A Royal Enclave, Heritage District<br />
-                London, United Kingdom
+               Tasveer Mahal, opp. Head Post Office, Civil Lines, <br/> Aligarh, Uttar Pradesh 202001
               </p>
             </div>
             
             <div className="pt-4 border-t border-white/5 flex flex-col gap-2">
-              <a href="mailto:concierge@mehdihasan.com" className="text-white/80 hover:text-[#c5a059] transition-colors font-serif italic tracking-wide">
-                concierge@mehdihasan.com
+              <a href="mailto:tailormehdihasan@gmail.com" className="text-white/80 hover:text-[#c5a059] transition-colors font-serif italic tracking-wide">
+                tailormehdihasan@gmail.com
               </a>
-              <span className="text-white/30 text-xs tracking-widest">+44 20 7946 0123</span>
+              <span className="text-white/30 text-xs tracking-widest">+91 82669 75779</span>
             </div>
           </motion.div>
         </div>

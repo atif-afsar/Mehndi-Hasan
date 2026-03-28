@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function CTASection() {
   const ref = useRef(null);
@@ -111,29 +112,31 @@ export default function CTASection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
         >
-          <motion.button
-            whileHover={{ scale: 1.03, boxShadow: "0 8px 40px rgba(201,168,76,0.25)" }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="relative px-12 py-4 text-xs tracking-[0.25em] uppercase font-semibold cursor-pointer overflow-hidden group"
-            style={{
-              background: "#c9a84c",
-              color: "#0d2b1e",
-              fontFamily: "'Cormorant Garamond', serif",
-              letterSpacing: "0.25em",
-              border: "none",
-            }}
-          >
-            {/* Shimmer sweep on hover */}
-            <span
-              className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
+          <Link to="/measurements">
+            <motion.button
+              whileHover={{ scale: 1.03, boxShadow: "0 8px 40px rgba(201,168,76,0.25)" }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="relative px-12 py-4 text-xs tracking-[0.25em] uppercase font-semibold cursor-pointer overflow-hidden group"
               style={{
-                background:
-                  "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%)",
+                background: "#c9a84c",
+                color: "#0d2b1e",
+                fontFamily: "'Cormorant Garamond', serif",
+                letterSpacing: "0.25em",
+                border: "none",
               }}
-            />
-            <span className="relative z-10">Book a Consultation</span>
-          </motion.button>
+            >
+              {/* Shimmer sweep on hover */}
+              <span
+                className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%)",
+                }}
+              />
+              <span className="relative z-10">Book a Consultation</span>
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

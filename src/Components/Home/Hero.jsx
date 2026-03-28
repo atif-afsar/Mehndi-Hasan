@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -19,7 +20,7 @@ const Hero = () => {
         
         <div className="inline-block mb-6 md:mb-8 transform transition-all duration-1000">
           <p className="text-[9px] md:text-[10px] tracking-[0.6em] text-[#c5a059] uppercase font-bold">
-            Established 1972
+            Established 1944
           </p>
           <div className="h-[1px] w-12 md:w-24 bg-[#c5a059] mx-auto mt-3 opacity-50"></div>
         </div>
@@ -36,12 +37,14 @@ const Hero = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8">
-          <button className="w-full sm:w-auto px-12 py-5 bg-[#c5a059] text-black text-[10px] tracking-[0.3em] font-bold uppercase transition-all duration-500 hover:bg-white hover:tracking-[0.4em]">
+        
+          <Link to="/collections" className="w-full sm:w-auto px-12 py-5 bg-[#c5a059] text-black text-[10px] tracking-[0.3em] font-bold uppercase transition-all duration-500 hover:bg-white hover:tracking-[0.4em] text-center">
             Discover Collections
-          </button>
-          <button className="w-full sm:w-auto px-12 py-5 border border-white/20 text-white text-[10px] tracking-[0.3em] font-bold uppercase transition-all duration-500 hover:border-[#c5a059] hover:text-[#c5a059]">
-            Our Heritage
-          </button>
+          </Link>
+      
+          <Link to="/contact" className="w-full sm:w-auto px-12 py-5 border border-white/20 text-white text-[10px] tracking-[0.3em] font-bold uppercase transition-all duration-500 hover:border-[#c5a059] hover:text-[#c5a059] text-center">
+            Contact Now
+          </Link>
         </div>
 
       </div>

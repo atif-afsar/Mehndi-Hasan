@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const MasterTailoring = () => {
   return (
@@ -22,12 +22,12 @@ const MasterTailoring = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8">
-          <button className="w-full sm:w-auto px-12 py-5 bg-[#c5a059] text-black text-[10px] tracking-[0.3em] font-bold uppercase transition-all duration-500 hover:bg-white hover:tracking-[0.4em]">
+          <Link to="/measurements" className="w-full sm:w-auto px-12 py-5 bg-[#c5a059] text-black text-[10px] tracking-[0.3em] font-bold uppercase transition-all duration-500 hover:bg-white hover:tracking-[0.4em] text-center">
             Book Appointment
-          </button>
-          <button className="w-full sm:w-auto px-12 py-5 border border-[#c5a059]/30 text-[#c5a059] text-[10px] tracking-[0.3em] font-bold uppercase transition-all duration-500 hover:border-white hover:text-white">
+          </Link>
+          <Link to="/gallery" className="w-full sm:w-auto px-12 py-5 border border-[#c5a059]/30 text-[#c5a059] text-[10px] tracking-[0.3em] font-bold uppercase transition-all duration-500 hover:border-white hover:text-white text-center">
             View Bespoke Process
-          </button>
+          </Link>
         </div>
       </div>
     </section>

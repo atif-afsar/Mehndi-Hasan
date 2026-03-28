@@ -1,5 +1,5 @@
-import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const fadeSlideUp = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },
@@ -130,35 +130,37 @@ const BespokeExperience = () => {
             </motion.ul>
 
             {/* CTA Button */}
-            <motion.button
-              className="group relative overflow-hidden px-9 py-[14px] cursor-pointer"
-              style={{
-                background: "transparent",
-                border: "1px solid rgba(197,160,89,0.55)",
-                fontFamily: "'Raleway', sans-serif",
-                fontWeight: 300,
-                fontSize: "9px",
-                letterSpacing: "0.38em",
-                textTransform: "uppercase",
-                color: "#c5a059",
-                transition: "color 0.45s, letter-spacing 0.4s",
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.color = "#0a0906";
-                e.currentTarget.style.letterSpacing = "0.48em";
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.color = "#c5a059";
-                e.currentTarget.style.letterSpacing = "0.38em";
-              }}
-              {...fadeSlideUp(0.75)}
-            >
-              {/* gold fill sweep */}
-              <span
-                className="absolute inset-0 bg-[#c5a059] -translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0"
-              />
-              <span className="relative z-10">Request an Appointment</span>
-            </motion.button>
+            <Link to="/contact">
+              <motion.button
+                className="group relative overflow-hidden px-9 py-[14px] cursor-pointer"
+                style={{
+                  background: "transparent",
+                  border: "1px solid rgba(197,160,89,0.55)",
+                  fontFamily: "'Raleway', sans-serif",
+                  fontWeight: 300,
+                  fontSize: "9px",
+                  letterSpacing: "0.38em",
+                  textTransform: "uppercase",
+                  color: "#c5a059",
+                  transition: "color 0.45s, letter-spacing 0.4s",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.color = "#0a0906";
+                  e.currentTarget.style.letterSpacing = "0.48em";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.color = "#c5a059";
+                  e.currentTarget.style.letterSpacing = "0.38em";
+                }}
+                {...fadeSlideUp(0.75)}
+              >
+                {/* gold fill sweep */}
+                <span
+                  className="absolute inset-0 bg-[#c5a059] -translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0"
+                />
+                <span className="relative z-10">Request an Appointment</span>
+              </motion.button>
+            </Link>
 
           </div>
 
