@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyImage from '../Common/LazyImage';
 
 const PrecisionCut = () => {
   return (
@@ -25,7 +26,7 @@ const PrecisionCut = () => {
         {/* Full width-ish Image */}
         <div className="w-full max-w-4xl mx-auto relative group">
           <div className="relative overflow-hidden border border-white/5 rounded-sm">
-             <img 
+             <LazyImage 
                src="https://images.unsplash.com/photo-1596489392813-982823b12ea8?q=80&w=2070&auto=format&fit=crop" 
                alt="Tailor cutting pattern on fabric"
                className="w-full aspect-[2/1] md:aspect-[21/9] object-cover transition-transform duration-1000 group-hover:scale-105"

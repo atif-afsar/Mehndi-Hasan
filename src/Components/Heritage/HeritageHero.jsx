@@ -3,10 +3,15 @@ import React from "react";
 const HeritageHero = () => {
   return (
     <section className="relative h-[100vh] md:h-screen w-full flex items-center justify-center text-white overflow-hidden bg-[#0A120F]">
-      {/* Background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-[20s] scale-110 hover:scale-100"
-        style={{ backgroundImage: "url('/heritage.png')" }}
+      {/* Background - Optimized for LCP */}
+      <img
+        src="/heritage.webp"
+        alt="Heritage Background"
+        width="1920"
+        height="1080"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[20s] scale-110 hover:scale-100"
+        fetchpriority="high"
+        loading="eager"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a1310]/80 via-black/50 to-[#0a1310]/90"></div>
       <div className="absolute inset-0 bg-black/60"></div>

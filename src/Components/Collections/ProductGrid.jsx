@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import LazyImage from "../Common/LazyImage";
 
-const generateProducts = (prefix, count, folder, ext = 'png', imagePath = null) => {
+const generateProducts = (prefix, count, folder, ext = 'webp', imagePath = null) => {
   const path = imagePath || folder;
   return Array.from({ length: count }, (_, i) => ({
     id: `${folder}-${i + 1}`,
@@ -83,11 +84,10 @@ const ProductGrid = () => {
           {currentItems.map((product) => (
             <div key={product.id} className="group cursor-pointer flex flex-col" onClick={() => navigate(`/collections/${product.id}`)}>
               <div className="aspect-[3/4] overflow-hidden bg-[#0d1815] relative mb-4 rounded-sm shadow-xl border border-white/5 group-hover:border-[#c5a059]/30 transition-colors">
-                <img 
+                <LazyImage 
                   src={product.image} 
                   alt={product.title} 
                   className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-90 group-hover:opacity-100"
-                  loading="lazy"
                   onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1594932224828-b4b059b6f68c?auto=format&fit=crop&q=80&w=800'; }}
                 />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-500"></div>

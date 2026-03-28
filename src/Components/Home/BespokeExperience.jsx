@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import LazyImage from "../Common/LazyImage";
 
 const fadeSlideUp = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },
@@ -189,8 +190,8 @@ const BespokeExperience = () => {
               }}
             >
               {/* ── Replace src with your actual image ── */}
-              <img
-                src="/Home/homeLagacy.png"
+              <LazyImage
+                src="/Home/homeLagacy.webp"
                 alt="Bespoke tailoring — master craftsman at work"
                 className="w-full h-full object-cover object-center"
                 style={{ opacity: 0.92 }}

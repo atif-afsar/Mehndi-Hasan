@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import LazyImage from '../Common/LazyImage';
 
 const marqueeItems = [
-  { id: 1, image: "/Marquee/image1.png", title: "The Imperial Maharaja", subtitle: "SIGNATURE GOLD ZARDOSI" },
-  { id: 2, image: "/Marquee/image2.png", title: "The Aligarh Classic", subtitle: "HERITAGE SILHOUETTE" },
-  { id: 3, image: "/Marquee/image3.png", title: "The Royal Velvet", subtitle: "EVENING NOBILITY" },
-  { id: 4, image: "/Marquee/image4.png", title: "The Viceroy Edition", subtitle: "MODERN BESPOKE" },
-  { id: 5, image: "/Marquee/image5.png", title: "The Monarch Suit", subtitle: "TAILORED PERFECTION" },
-  { id: 6, image: "/Marquee/image6.png", title: "The Regent Sherwani", subtitle: "ROYAL ENSEMBLE" },
-  { id: 7, image: "/Marquee/image7.png", title: "The Sovereign Tux", subtitle: "MIDNIGHT ELEGANCE" },
-  { id: 8, image: "/Marquee/image8.png", title: "The Dynasty Kurta", subtitle: "CRAFTED TRADITION" },
-  { id: 9, image: "/Marquee/image9.png", title: "The Emperor's Drape", subtitle: "LUXURY REDEFINED" },
-  { id: 10, image: "/Marquee/image10.png", title: "The Noble Charm", subtitle: "VINTAGE AESTHETIC" }
+  { id: 1, image: "/Marquee/image1.webp", title: "The Imperial Maharaja", subtitle: "SIGNATURE GOLD ZARDOSI" },
+  { id: 2, image: "/Marquee/image2.webp", title: "The Aligarh Classic", subtitle: "HERITAGE SILHOUETTE" },
+  { id: 3, image: "/Marquee/image3.webp", title: "The Royal Velvet", subtitle: "EVENING NOBILITY" },
+  { id: 4, image: "/Marquee/image4.webp", title: "The Viceroy Edition", subtitle: "MODERN BESPOKE" },
+  { id: 5, image: "/Marquee/image5.webp", title: "The Monarch Suit", subtitle: "TAILORED PERFECTION" },
+  { id: 6, image: "/Marquee/image6.webp", title: "The Regent Sherwani", subtitle: "ROYAL ENSEMBLE" },
+  { id: 7, image: "/Marquee/image7.webp", title: "The Sovereign Tux", subtitle: "MIDNIGHT ELEGANCE" },
+  { id: 8, image: "/Marquee/image8.webp", title: "The Dynasty Kurta", subtitle: "CRAFTED TRADITION" },
+  { id: 9, image: "/Marquee/image9.webp", title: "The Emperor's Drape", subtitle: "LUXURY REDEFINED" },
+  { id: 10, image: "/Marquee/image10.webp", title: "The Noble Charm", subtitle: "VINTAGE AESTHETIC" }
 ];
 
 export default function Marquee() {
@@ -188,7 +189,7 @@ export default function Marquee() {
           {[...marqueeItems, ...marqueeItems].map((item, index) => (
             <div key={`${item.id}-${index}`} className="marquee-item-wrapper">
               <div className="marquee-card">
-                <img src={item.image} alt={item.title} loading="lazy" />
+                <LazyImage src={item.image} alt={item.title} />
                 <div className="marquee-overlay" />
                 <div className="marquee-text-container">
                   <h3 style={{

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import LazyImage from './LazyImage';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +47,7 @@ const Navbar = () => {
             
             {/* Logo Image / Monogram */}
             <div className="relative w-14 h-14 md:w-14 md:h-14 overflow-hidden rounded-full">
-               <img src="/logo.png" alt="M" className="w-full h-full object-contain filter brightness-110" />
+               <LazyImage src="/logo.webp" alt="M" width="56" height="56" className="w-full h-full object-contain filter brightness-110" priority />
             </div>
           </div>
           

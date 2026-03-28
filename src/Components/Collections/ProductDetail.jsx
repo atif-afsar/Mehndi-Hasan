@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Footer from '../Common/Footer';
+import SEO from '../Common/SEO';
 
 const generateProducts = (prefix, count, folder, ext = 'png', imagePath = null) => {
   const path = imagePath || folder;
@@ -118,6 +119,13 @@ const ProductDetail = () => {
 
   return (
     <main className="bg-[#0a1310] min-h-screen">
+      <SEO 
+        title={`${product.title} - ${categoryInfo.title} | Mehdi Hasan Tailor`}
+        description={categoryInfo.description}
+        keywords={`${product.category}, ${product.title}, bespoke ${product.category}, custom ${product.category}, luxury menswear`}
+        ogImage={product.image}
+        ogType="product"
+      />
       {/* Breadcrumb */}
       <div className="bg-[#0a1310] border-b border-white/5 py-4 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">

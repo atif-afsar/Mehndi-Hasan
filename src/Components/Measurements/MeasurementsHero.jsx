@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyImage from '../Common/LazyImage';
 
 const MeasurementsHero = () => {
   return (
@@ -49,8 +50,8 @@ const MeasurementsHero = () => {
             {/* Dark inner Glow/Box */}
             <div className="bg-[#0a1310] p-6 border border-white/5 rounded-sm shadow-2xl relative">
               <div className="aspect-[4/5] overflow-hidden">
-                <img 
-                  src="/Sherwanis/image3.png" 
+                <LazyImage 
+                  src="/Sherwanis/image3.webp" 
                   alt="Tailor's mannequin"
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80"
                 />

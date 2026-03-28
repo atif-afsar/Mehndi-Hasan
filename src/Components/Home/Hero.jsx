@@ -5,10 +5,15 @@ const Hero = () => {
   return (
     <section className="relative h-screen w-full flex items-center justify-center text-white overflow-hidden bg-[#0a1310]">
       
-      {/* Background with Dark Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] hover:scale-110 opacity-60"
-        style={{ backgroundImage: "url('/Home/hero.png')" }}
+      {/* Background with Dark Overlay - Optimized for LCP */}
+      <img
+        src="/Home/hero.webp"
+        alt="Mehdi Hasan Tailor Hero"
+        width="1920"
+        height="1080"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] hover:scale-110 opacity-60"
+        fetchpriority="high"
+        loading="eager"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a1310]/80 via-transparent to-[#0a1310]/95"></div>
 

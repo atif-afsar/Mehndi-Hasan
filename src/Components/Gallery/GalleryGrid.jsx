@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LazyImage from '../Common/LazyImage';
 
 const GalleryGrid = () => {
     const [activeFilter, setActiveFilter] = useState('ALL WORK');
@@ -8,7 +9,7 @@ const GalleryGrid = () => {
     // Generate Awards images
     const awardsImages = Array.from({ length: 10 }, (_, i) => ({
         id: `awards-${i + 1}`,
-        src: `/Awards/awards${i + 1}.png`,
+        src: `/Awards/awards${i + 1}.webp`,
         style: "AWARDS",
         title: `Award ${i + 1}`
     }));
@@ -16,7 +17,7 @@ const GalleryGrid = () => {
     // Generate Celebs images
     const celebsImages = Array.from({ length: 9 }, (_, i) => ({
         id: `celeb-${i + 1}`,
-        src: `/Celebs/celeb${i + 1}.png`,
+        src: `/Celebs/celeb${i + 1}.webp`,
         style: "CELEBS",
         title: `Celebrity ${i + 1}`
     }));
@@ -62,7 +63,7 @@ const GalleryGrid = () => {
                 .filter(img => activeFilter === 'ALL WORK' || img.style === activeFilter)
                 .map((img) => (
                 <div key={img.id} className="relative group overflow-hidden bg-[#1a1d1a] border border-white/5 cursor-pointer rounded-sm">
-                    <img 
+                    <LazyImage 
                         src={img.src} 
                         alt={img.title} 
                         className="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"

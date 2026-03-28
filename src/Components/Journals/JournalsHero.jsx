@@ -4,9 +4,13 @@ import { motion } from 'framer-motion';
 const JournalsHero = () => {
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center text-white overflow-hidden bg-[#0A1310] pt-[110px] md:pt-[120px]">
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-30 grayscale"
-        style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBl993WLsnGDQKuVGWF4PnCnAdFloxS0QUnXtTS08dQ9C086fxuV20WLJNnJiS9qEh2zXW0O5Qxrv_OxRu_H7T6XjvwampIXjdfAFiJ5zZcF_qQTVQmaifo6d02VKX8Z5GJjd2ASqoPZ_E6_ZtfX5oHtnGfXQqtob3tKysGzWyEDQ92tYRrimwaoM5-AYgrXKAegKL3gIs3hAhcc0jOUyaePwkwZqn8vBLJ7wvTkgoerNER3MY7WPSprhj0m78MzyZ_-N-UZRC1Qf_P')" }}
+      <img
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl993WLsnGDQKuVGWF4PnCnAdFloxS0QUnXtTS08dQ9C086fxuV20WLJNnJiS9qEh2zXW0O5Qxrv_OxRu_H7T6XjvwampIXjdfAFiJ5zZcF_qQTVQmaifo6d02VKX8Z5GJjd2ASqoPZ_E6_ZtfX5oHtnGfXQqtob3tKysGzWyEDQ92tYRrimwaoM5-AYgrXKAegKL3gIs3hAhcc0jOUyaePwkwZqn8vBLJ7wvTkgoerNER3MY7WPSprhj0m78MzyZ_-N-UZRC1Qf_P"
+        alt="Journals Background"
+        width="1920"
+        height="1280"
+        className="absolute inset-0 w-full h-full object-cover opacity-30 grayscale"
+        loading="eager"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a1310] via-transparent to-[#0a1310]"></div>
       

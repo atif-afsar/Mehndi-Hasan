@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyImage from '../Common/LazyImage';
 
 const HandStitching = () => {
   return (
@@ -45,7 +46,7 @@ const HandStitching = () => {
         <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end gap-4 h-[350px] sm:h-[450px]">
           {/* Back Image (Higher) */}
           <div className="w-[45%] h-[80%] absolute left-[5%] top-0 z-10 overflow-hidden rounded-sm border border-white/10 group shadow-2xl">
-             <img 
+             <LazyImage 
                src="https://images.unsplash.com/photo-1598532213005-52b31278ffc9?q=80&w=1887&auto=format&fit=crop" 
                alt="Suit details"
                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -56,7 +57,7 @@ const HandStitching = () => {
           
           {/* Front Image (Lower, overlaps) */}
           <div className="w-[45%] h-[80%] absolute right-[5%] bottom-0 z-20 overflow-hidden rounded-sm border border-[#b8965a]/30 group shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8)]">
-             <img 
+             <LazyImage 
                src="https://images.unsplash.com/photo-1584288019184-c89b254a61bd?q=80&w=1964&auto=format&fit=crop" 
                alt="Close up hand stitching detail"
                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { journalById, journals } from "./journalData";
+import SEO from "../Common/SEO";
 
 const JournalDetail = () => {
   const { id } = useParams();
@@ -33,6 +34,13 @@ const JournalDetail = () => {
 
   return (
     <div className="bg-black min-h-screen">
+      <SEO 
+        title={`${article.title} - Journal | Mehdi Hasan Tailor`}
+        description={article.excerpt}
+        keywords={`${article.category}, tailoring journal, ${article.title}, bespoke fashion, menswear style`}
+        ogImage={article.image}
+        ogType="article"
+      />
       {/* Back Button (avoids fixed navbar overlap) */}
       <div className="absolute left-0 right-0 z-40">
         <motion.button

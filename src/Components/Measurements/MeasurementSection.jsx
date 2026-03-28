@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import LazyImage from '../Common/LazyImage';
 
 const MeasurementSection = () => {
   return (
@@ -64,8 +65,8 @@ const MeasurementSection = () => {
             <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-[#b8965a]/40"></div>
             
             <div className="overflow-hidden rounded-sm">
-              <img 
-                src="/measurement.png" 
+              <LazyImage 
+                src="/measurement.webp" 
                 alt="Measurement Guide" 
                 className="w-full h-auto object-contain transition-transform duration-1000 group-hover:scale-105"
               />

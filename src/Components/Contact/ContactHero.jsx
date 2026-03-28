@@ -3,9 +3,13 @@ import React from "react";
 const ContactHero = () => {
   return (
     <section className="relative h-[50vh] w-full flex items-center justify-center text-white overflow-hidden bg-[#0A120F]">
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20 grayscale"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&q=80&w=2000')" }}
+      <img
+        src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&q=80&w=2000"
+        alt="Contact Background"
+        width="2000"
+        height="1333"
+        className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale"
+        loading="lazy"
       />
       
       <div className="relative text-center z-10 px-6 max-w-4xl pt-20">

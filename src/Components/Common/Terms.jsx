@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Footer from './Footer';
+import SEO from './SEO';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -14,6 +15,12 @@ const fadeUp = {
 const Terms = () => {
   return (
     <div className="bg-[#051c12] min-h-screen font-sans text-white/80 selection:bg-[#c5a059]/30 pt-32">
+      <SEO 
+        title="Terms & Conditions - Mehdi Hasan Tailor"
+        description="Review our terms and conditions for bespoke tailoring services, orders, and customer agreements at Mehdi Hasan Tailor."
+        keywords="terms and conditions, service terms, tailoring policy, customer agreement"
+        ogImage="/Home/hero.webp"
+      />
       {/* Decorative effect */}
       <div className="absolute top-0 left-0 w-full h-[500px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#c5a059]/10 via-transparent to-transparent pointer-events-none" />
 

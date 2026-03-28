@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyImage from '../Common/LazyImage';
 
 const GalleryHero = () => {
   return (
@@ -14,10 +15,13 @@ const GalleryHero = () => {
         {/* Center Image Container */}
         <div className="absolute inset-0 flex justify-center items-center">
             <div className="w-[85%] md:w-[70%] h-full relative">
-                 <img 
+                 <LazyImage 
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk-SIZGsGdDULK6VZyvSsjTUTB4RlkN7FqB_fUOX5JMTfgddqc2CTiaui9sp4doKg6LZfOdjEQnchuvYoNFfwHFARIxCIxTz5DZJyNjHe0f1j6XKSyS1mleoDYFMDnjEXX3A7irj0IrmXArmgXGN8S1TO8jtYCtYoYHchGa8zTxkMgIU5Ep6k4z3bcKFtMktLvGCoCU4lHjkUqPjUsjdnkOpJ6cAm7mUuObi4vUBY3JzIYh8SnsCpNm6JqhF-hemRp5etUSZSMX96l" 
-                    alt="Fashion Editorial" 
+                    alt="Fashion Editorial"
+                    width="1200"
+                    height="1600"
                     className="w-full h-full object-cover opacity-80"
+                    priority
                 />
                 
                 {/* Gradient Masks for blending into background */}

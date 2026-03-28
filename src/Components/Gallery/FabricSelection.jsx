@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyImage from '../Common/LazyImage';
 
 const FabricSelection = () => {
   return (
@@ -8,7 +9,7 @@ const FabricSelection = () => {
         {/* Left Image Area */}
         <div className="relative group">
           <div className="rounded-sm overflow-hidden aspect-[4/5] max-w-[400px] mx-auto w-full border border-white/5">
-            <img 
+            <LazyImage 
               src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1972&auto=format&fit=crop" 
               alt="Folded luxury fabrics"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"

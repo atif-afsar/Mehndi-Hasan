@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import LazyImage from "../Common/LazyImage";
 
 const collections = [
   {
@@ -8,21 +9,21 @@ const collections = [
     desc: "Velvet & Silk masterpieces",
     series: "01",
     tag: "Signature",
-    image: "/Sherwanis/image1.png",
+    image: "/Sherwanis/image1.webp",
   },
   {
     title: "Classic Kurta",
     desc: "Heritage weaving techniques",
     series: "02",
     tag: "Heritage",
-    image: "/kurta/kurta1.png",
+    image: "/kurta/kurta1.webp",
   },
   {
     title: "Premium Suits",
     desc: "Structured elegance, reimagined",
     series: "03",
     tag: "Contemporary",
-    image: "/Suits/suit7.png",
+    image: "/Suits/suit7.webp",
   },
   {
     title: "Bespoke Suiting",
@@ -248,7 +249,7 @@ const DesktopCard = ({ item, idx, hovered }) => (
         border: "1px solid rgba(197,160,89,0.08)",
       }}
     >
-      <img
+      <LazyImage
         src={item.image}
         alt={item.title}
         style={{
@@ -378,7 +379,6 @@ const DesktopCard = ({ item, idx, hovered }) => (
           style={{
             color: hovered ? "#c5a059" : "rgba(197,160,89,0.4)",
             fontSize: "14px",
-            transition: "color 0.3s",
             transform: hovered ? "translate(2px, -2px)" : "translate(0,0)",
             display: "inline-block",
             transition: "all 0.35s",
@@ -425,7 +425,7 @@ const MobileCard = ({ item, idx, hovered }) => (
         position: "relative",
       }}
     >
-      <img
+      <LazyImage
         src={item.image}
         alt={item.title}
         style={{

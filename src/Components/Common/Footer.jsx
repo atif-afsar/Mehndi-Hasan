@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
-import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
+import { Mail, Phone, MapPin, ArrowUpRight, Instagram, Facebook, Youtube } from "lucide-react";
+import LazyImage from './LazyImage';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -37,7 +37,7 @@ export default function Footer() {
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 border border-[#c5a059]/40 rounded-full flex items-center justify-center">
-                <img src="/logo.png" alt="MH" className="w-full h-full object-contain brightness-125" />
+                <LazyImage src="/logo.webp" alt="MH" className="w-full h-full object-contain brightness-125" />
               </div>
               <h2 className="text-[#c5a059] font-serif text-3xl tracking-widest uppercase">
                Mehdi Hasan Tailor
@@ -56,7 +56,7 @@ export default function Footer() {
                 className="text-white/30 transition-colors"
                 aria-label="Instagram"
               >
-                <FaInstagram size={20} />
+                <Instagram size={20} />
               </motion.a>
               <motion.a 
                 href="https://www.facebook.com/Aligarhsherwani/"
@@ -65,7 +65,7 @@ export default function Footer() {
                 className="text-white/30 transition-colors"
                 aria-label="Facebook"
               >
-                <FaFacebookF size={20} />
+                <Facebook size={20} />
               </motion.a>
               <motion.a 
                 href="https://www.youtube.com/@mehdihasantailoraligarh43" 
@@ -75,7 +75,7 @@ export default function Footer() {
                 className="text-white/30 transition-colors"
                 aria-label="YouTube"
               >
-                <FaYoutube size={20} />
+                <Youtube size={20} />
               </motion.a>
             </div>
           </motion.div>
