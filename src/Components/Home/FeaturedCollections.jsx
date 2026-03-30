@@ -10,6 +10,7 @@ const collections = [
     series: "01",
     tag: "Signature",
     image: "/Sherwanis/image1.webp",
+    categoryId: "Sherwanis",
   },
   {
     title: "Classic Kurta",
@@ -17,6 +18,7 @@ const collections = [
     series: "02",
     tag: "Heritage",
     image: "/kurta/kurta1.webp",
+    categoryId: "Kurta-Pajama",
   },
   {
     title: "Premium Suits",
@@ -24,6 +26,7 @@ const collections = [
     series: "03",
     tag: "Contemporary",
     image: "/Suits/suit7.webp",
+    categoryId: "Suits",
   },
   {
     title: "Bespoke Suiting",
@@ -32,6 +35,7 @@ const collections = [
     tag: "Couture",
     image:
       "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&q=80&w=800",
+    categoryId: "Suits",
   },
 ];
 
@@ -211,6 +215,7 @@ const CollectionCard = ({ item, idx }) => {
     <motion.div variants={itemVariants}>
       <Link
         to="/collections"
+        state={{ category: item.categoryId }}
         style={{ textDecoration: "none", display: "block" }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}

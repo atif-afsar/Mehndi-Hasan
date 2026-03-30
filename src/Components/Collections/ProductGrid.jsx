@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import LazyImage from "../Common/LazyImage";
 
 const generateProducts = (prefix, count, folder, ext = 'webp', imagePath = null) => {
@@ -34,9 +34,17 @@ const categories = [
 
 const ProductGrid = () => {
   const navigate = useNavigate();
-  const [filter, setFilter] = useState("Sherwanis");
+  const location = useLocation();
+  const [filter, setFilter] = useState(location.state?.category || "Sherwanis");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8; // Number of items per page
+
+  // Update filter when location state changes
+  useEffect(() => {
+    if (location.state?.category) {
+      setFilter(location.state.category);
+    }
+  }, [location.state]);
 
   // Reset page to 1 whenever the filter changes
   useEffect(() => {
