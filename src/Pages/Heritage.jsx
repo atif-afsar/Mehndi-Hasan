@@ -8,6 +8,7 @@ import SEO from '../Components/Common/SEO'
 const LegacyStory = lazy(() => import('../Components/Heritage/LegacyStory'))
 const Timeline = lazy(() => import('../Components/Heritage/Timeline'))
 const ValuesGrid = lazy(() => import('../Components/Heritage/ValuesGrid'))
+const FabricShowcase = lazy(() => import('../Components/Heritage/FabricShowcase'))
 const HeritageCTA = lazy(() => import('../Components/Heritage/HeritageCTA'))
 
 const Heritage = () => {
@@ -28,6 +29,9 @@ const Heritage = () => {
       </Suspense>
       <Suspense fallback={<SectionLoader bgColor="bg-[#0a1310]" />}>
         <ValuesGrid />
+      </Suspense>
+      <Suspense fallback={<SectionLoader bgColor="bg-[#0a1310]" />}>
+        <FabricShowcase />
       </Suspense>
       <Suspense fallback={<SectionLoader bgColor="bg-[#0a1310]" />}>
         <HeritageCTA />

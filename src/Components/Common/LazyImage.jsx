@@ -53,13 +53,17 @@ const LazyImage = ({
   };
 
   const handleError = (e) => {
-    // Fallback to PNG format if WebP fails
     const currentSrc = e.target.src;
-    const fallbackSrc = src.replace(/\.webp$/i, '.png');
     
-    // Only try fallback once
-    if (!currentSrc.endsWith('.png') && fallbackSrc !== src) {
-      e.target.src = fallbackSrc;
+    // If we're currently failing on a webp image
+    if (currentSrc.endsWith('.webp')) {
+      // If original src was not webp (meaning we auto-converted it), fall back to original
+      if (!src.endsWith('.webp')) {
+        e.target.src = src;
+      } else {
+        // If original src WAS webp, fall back to png
+        e.target.src = src.replace(/\.webp$/i, '.png');
+      }
     } else if (onError) {
       onError(e);
     }

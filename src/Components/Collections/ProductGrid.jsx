@@ -20,6 +20,7 @@ const allProducts = [
   ...generateProducts('suit', 20, 'Suits'),
   ...generateProducts('kurta', 9, 'Kurta-Pajama', 'png', 'kurta'),
   ...generateProducts('west', 16, 'Indo-west', 'png', 'Indo-west'),
+  ...generateProducts('pagdi', 17, 'Safa-Pagdi', 'png', 'pagdi'),
 ];
 
 const categories = [
@@ -82,7 +83,11 @@ const ProductGrid = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10">
           {currentItems.map((product) => (
-            <div key={product.id} className="group cursor-pointer flex flex-col" onClick={() => navigate(`/collections/${product.id}`)}>
+            <div 
+              key={product.id} 
+              className={`group flex flex-col ${product.category !== 'Safa-Pagdi' ? 'cursor-pointer' : ''}`} 
+              onClick={() => product.category !== 'Safa-Pagdi' && navigate(`/collections/${product.id}`)}
+            >
               <div className="aspect-[3/4] overflow-hidden bg-[#0d1815] relative mb-4 rounded-sm shadow-xl border border-white/5 group-hover:border-[#c5a059]/30 transition-colors">
                 <LazyImage 
                   src={product.image} 

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const PremiumWhatsAppButton = () => {
-  const phoneNumber = "YOUR_PHONE_NUMBER"; 
+  const phoneNumber = "+918266975779"; 
   const message = "Hello Mehdi Hasan Tailor, I would like to inquire about a bespoke consultation.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
