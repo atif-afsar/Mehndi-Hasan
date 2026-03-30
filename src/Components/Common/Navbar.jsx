@@ -21,7 +21,6 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Collections", path: "/collections" },
-    // { name: "Bespoke", path: "/bespoke" },
     { name: "Heritage", path: "/heritage" },
     { name: "Journals", path: "/journals" },
     { name: "Measurements", path: "/measurements" },
@@ -158,11 +157,6 @@ const Navbar = () => {
 
               {/* Sidebar Footer Info */}
               <div className="mt-20 border-t border-[#b8965a]/20 pt-10">
-                <p className="font-sans text-[10px] tracking-[0.5em] text-[#b8965a] uppercase mb-4">Contact us</p>
-                <p className="text-white/60 font-light text-sm tracking-widest leading-relaxed">
-                  London Heritage District<br />
-                  +44 20 7946 0123
-                </p>
               </div>
             </div>
 

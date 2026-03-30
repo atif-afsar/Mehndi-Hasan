@@ -46,17 +46,21 @@ const ContactForm = () => {
             <p className="text-gray-500 text-sm md:text-base font-light tracking-widest leading-relaxed opacity-80">Visit us for a personal consultation at our flagship locations.</p>
           </header>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-12 md:gap-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-10 md:gap-14">
             {[
-              { city: "Aligarh, Uttar Pradesh 202001", address: " Tasveer Mahal, opp. Head Post Office, Civil Lines", phone: "+91 082669 75779" },
+               { city: "Aligarh Studio", address: "Tasveer Mahal, opp. Head Post Office, Civil Lines, Aligarh, U.P. 202001", phone: "+91 82669 75779" },
+               { city: "Delhi (Okhla)", address: "A.J.N.S. Plaza, New Shahji Sweet, Jasola Road, Kalindi Kunj, New Delhi", phone: "+91 93597 84628" },
+               { city: "Delhi (Batla House)", address: "Rehman Complex, Batla House Chowk, Opp. Jamia Bank, New Delhi-110025", phone: "+91 87916 30471" },
             ].map((loc, i) => (
-              <div key={i} className="group cursor-pointer">
-                <div className="flex items-center gap-4 mb-4">
+              <div key={i} className="group cursor-default">
+                <div className="flex items-center gap-4 mb-3">
                     <div className="h-[1px] w-6 bg-[#c5a059]/40 group-hover:w-12 transition-all duration-500"></div>
-                    <h4 className="text-[#c5a059] text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em]">{loc.city}</h4>
+                    <h4 className="text-[#c5a059] text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em]">{loc.city}</h4>
                 </div>
-                <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed tracking-widest pl-10 opacity-70 group-hover:opacity-100 transition-opacity">{loc.address}</p>
-                <p className="text-white text-sm md:text-base font-medium pl-10 mt-3 tracking-widest">{loc.phone}</p>
+                <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed tracking-widest pl-10 opacity-70 group-hover:opacity-100 transition-opacity">{loc.address}</p>
+                <p className="text-white text-xs md:text-sm font-medium pl-10 mt-2 tracking-widest">
+                  <a href={`tel:${loc.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-[#c5a059] transition-colors">{loc.phone}</a>
+                </p>
               </div>
             ))}
           </div>
