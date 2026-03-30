@@ -3,29 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Volume2, VolumeX, Play, Instagram } from 'lucide-react';
 
 const videos = [
-  {
-    id: 1,
-    chapter: "Chapter I",
-    title: "The Art of Bespoke",
-    videoId: "Sf6S3HFtZI8",
-  },
-  {
-    id: 2,
-    chapter: "Chapter II",
-    title: "Golden Threads",
-    videoId: "YvSeDOJD4iM",
-  },
+  
+
   {
     id: 3,
     chapter: "Chapter III",
     title: "Heritage Legacy",
     videoId: "CNgV8Yq_iCc",
-  },
-  {
-    id: 4,
-    chapter: "Chapter IV",
-    title: "Craftsmanship Unveiled",
-    videoId: "4UCjNzMUEjI",
   },
   {
     id: 5,

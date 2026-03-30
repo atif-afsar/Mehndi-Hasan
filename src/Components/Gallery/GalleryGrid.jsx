@@ -20,7 +20,7 @@ const GalleryGrid = () => {
         src: `/Celebs/celeb${i + 1}.webp`,
         style: "CELEBS",
         title: `Celebrity ${i + 1}`
-    }));
+    })).filter(img => img.id !== 'celeb-2');
 
     const images = [...awardsImages, ...celebsImages];
 
