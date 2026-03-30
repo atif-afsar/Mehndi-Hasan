@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const ContactForm = () => {
+  const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setStatus("Sending Inquiry...");
+    
+    // NOTE: To make this work, sign up at web3forms.com to get your free access key
+    const formData = new FormData(event.target);
+    formData.append("access_key", "f86b81e9-e78e-4c7d-abaf-1386c2e5bba4");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("Inquiry Sent Successfully! We will be in touch.");
+        event.target.reset();
+      } else {
+        setStatus(data.message || "Failed to send inquiry. Try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("Something went wrong! Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="bg-[#0a1310] py-24 md:py-48 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 md:gap-32">
@@ -66,26 +99,26 @@ const ContactForm = () => {
           <div className="absolute top-0 right-0 w-24 h-24 border-t border-r border-[#c5a059]/20 group-hover:border-[#c5a059]/40 transition-colors pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 border-b border-l border-[#c5a059]/20 group-hover:border-[#c5a059]/40 transition-colors pointer-events-none"></div>
 
-          <form className="space-y-8 md:space-y-12 relative z-10">
+          <form onSubmit={onSubmit} className="space-y-8 md:space-y-12 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               <div className="space-y-3">
                 <label className="text-[9px] tracking-[0.4em] text-gray-500 uppercase font-bold">First Name</label>
-                <input type="text" className="w-full bg-[#0a1310] border-b border-white/10 p-4 text-white text-sm focus:border-[#c5a059] outline-none transition-all placeholder:text-gray-800" placeholder="Ahmad" />
+                <input type="text" name="First Name" required className="w-full bg-[#0a1310] border-b border-white/10 p-4 text-white text-sm focus:border-[#c5a059] outline-none transition-all placeholder:text-gray-800" placeholder="Ahmad" />
               </div>
               <div className="space-y-3">
                 <label className="text-[9px] tracking-[0.4em] text-gray-500 uppercase font-bold">Last Name</label>
-                <input type="text" className="w-full bg-[#0a1310] border-b border-white/10 p-4 text-white text-sm focus:border-[#c5a059] outline-none transition-all placeholder:text-gray-800" placeholder="Khan" />
+                <input type="text" name="Last Name" required className="w-full bg-[#0a1310] border-b border-white/10 p-4 text-white text-sm focus:border-[#c5a059] outline-none transition-all placeholder:text-gray-800" placeholder="Khan" />
               </div>
             </div>
             
             <div className="space-y-3">
                <label className="text-[9px] tracking-[0.4em] text-gray-500 uppercase font-bold">Email Address</label>
-               <input type="email" className="w-full bg-[#0a1310] border-b border-white/10 p-4 text-white text-sm focus:border-[#c5a059] outline-none transition-all placeholder:text-gray-800" placeholder="ahmad.k@luxury.com" />
+               <input type="email" name="Email" required className="w-full bg-[#0a1310] border-b border-white/10 p-4 text-white text-sm focus:border-[#c5a059] outline-none transition-all placeholder:text-gray-800" placeholder="ahmad.k@luxury.com" />
             </div>
 
             <div className="space-y-3">
                <label className="text-[9px] tracking-[0.4em] text-gray-500 uppercase font-bold">Inquiry Type</label>
-               <select className="w-full bg-[#0a1310] border-b border-white/10 p-4 text-white text-sm focus:border-[#c5a059] outline-none transition-all appearance-none cursor-pointer">
+               <select name="Inquiry Type" className="w-full bg-[#0a1310] border-b border-white/10 p-4 text-white text-sm focus:border-[#c5a059] outline-none transition-all appearance-none cursor-pointer">
                   <option>Bespoke Consultation</option>
                   <option>Trunk Show Inquiry</option>
                   <option>Product Information</option>
@@ -95,12 +128,21 @@ const ContactForm = () => {
 
             <div className="space-y-3">
                <label className="text-[9px] tracking-[0.4em] text-gray-500 uppercase font-bold">Your Message</label>
-               <textarea rows="4" className="w-full bg-[#0a1310] border-b border-white/10 p-4 text-white text-sm focus:border-[#c5a059] outline-none transition-all resize-none placeholder:text-gray-800" placeholder="Describe your vision..."></textarea>
+               <textarea name="Message" required rows="4" className="w-full bg-[#0a1310] border-b border-white/10 p-4 text-white text-sm focus:border-[#c5a059] outline-none transition-all resize-none placeholder:text-gray-800" placeholder="Describe your vision..."></textarea>
             </div>
 
-            <button className="w-full py-6 bg-[#c5a059] text-black text-[10px] tracking-[0.4em] font-bold uppercase transition-all duration-500 hover:bg-white hover:tracking-[0.5em]">
-              Send Inquiry
-            </button>
+            <div className="flex flex-col items-center">
+              <button 
+                type="submit"
+                disabled={isSubmitting} 
+                className={`w-full py-6 bg-[#c5a059] text-black text-[10px] tracking-[0.4em] font-bold uppercase transition-all duration-500 ${
+                  isSubmitting ? "opacity-70 cursor-wait bg-white tracking-[0.5em]" : "hover:bg-white hover:tracking-[0.5em] cursor-pointer"
+                }`}
+              >
+                {isSubmitting ? "Sending..." : "Send Inquiry"}
+              </button>
+              {status && <p className="mt-4 text-[#c5a059] text-[10px] tracking-[0.2em] uppercase font-bold text-center">{status}</p>}
+            </div>
           </form>
         </div>
 
