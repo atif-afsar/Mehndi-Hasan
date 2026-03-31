@@ -11,8 +11,7 @@ export default function CTASection() {
       ref={ref}
       className="relative w-full overflow-hidden flex items-center justify-center py-32 px-6"
       style={{
-        background:
-          "radial-gradient(ellipse at 60% 40%, #0d2b1e 0%, #071510 50%, #030d09 100%)",
+        background: "#E8DBB3",
         minHeight: "420px",
       }}
     >
@@ -30,24 +29,24 @@ export default function CTASection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 40%, rgba(2,8,5,0.7) 100%)",
+            "radial-gradient(ellipse at center, transparent 40%, rgba(13,43,30,0.12) 100%)",
         }}
       />
 
       {/* Top faint border line */}
       <div
-        className="absolute top-0 left-0 right-0 h-px opacity-20"
+        className="absolute top-0 left-0 right-0 h-px opacity-[0.15]"
         style={{
           background:
-            "linear-gradient(90deg, transparent, #c9a84c 30%, #c9a84c 70%, transparent)",
+            "linear-gradient(90deg, transparent, #0d2b1e 30%, #0d2b1e 70%, transparent)",
         }}
       />
       {/* Bottom faint border line */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-px opacity-20"
+        className="absolute bottom-0 left-0 right-0 h-px opacity-[0.15]"
         style={{
           background:
-            "linear-gradient(90deg, transparent, #c9a84c 30%, #c9a84c 70%, transparent)",
+            "linear-gradient(90deg, transparent, #0d2b1e 30%, #0d2b1e 70%, transparent)",
         }}
       />
 
@@ -62,9 +61,9 @@ export default function CTASection() {
         >
           <span
             className="text-xs tracking-[0.3em] uppercase font-medium"
-            style={{ color: "#c9a84c", fontFamily: "'Cormorant Garamond', serif" }}
+            style={{ color: "#0d2b1e", fontFamily: "'Cormorant Garamond', serif" }}
           >
-            Est. 1924 · London
+            Estd. 1944 · London
           </span>
         </motion.div>
 
@@ -73,7 +72,7 @@ export default function CTASection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-          className="text-white font-bold leading-tight mb-5"
+          className="text-[#0d2b1e] font-bold leading-tight mb-5"
           style={{
             fontFamily: "'Playfair Display', serif",
             fontSize: "clamp(2rem, 5vw, 3.25rem)",
@@ -89,9 +88,9 @@ export default function CTASection() {
           transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
           className="flex items-center gap-3 mb-6"
         >
-          <div className="h-px w-12 opacity-40" style={{ background: "#c9a84c" }} />
-          <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#c9a84c", opacity: 0.6 }} />
-          <div className="h-px w-12 opacity-40" style={{ background: "#c9a84c" }} />
+          <div className="h-px w-12 opacity-[0.3]" style={{ background: "#0d2b1e" }} />
+          <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#0d2b1e", opacity: 0.5 }} />
+          <div className="h-px w-12 opacity-[0.3]" style={{ background: "#0d2b1e" }} />
         </motion.div>
 
         {/* Subtext */}
@@ -100,7 +99,7 @@ export default function CTASection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           className="text-base md:text-lg leading-relaxed mb-10 max-w-lg"
-          style={{ color: "rgba(255,255,255,0.55)", fontFamily: "'Cormorant Garamond', serif", fontSize: "1.125rem" }}
+          style={{ color: "rgba(13,43,30,0.8)", fontFamily: "'Cormorant Garamond', serif", fontSize: "1.125rem" }}
         >
           Experience the ultimate in bespoke tailoring. Book your consultation with
           our master tailor today.
@@ -114,13 +113,13 @@ export default function CTASection() {
         >
           <Link to="/measurements">
             <motion.button
-              whileHover={{ scale: 1.03, boxShadow: "0 8px 40px rgba(201,168,76,0.25)" }}
+              whileHover={{ scale: 1.03, boxShadow: "0 8px 40px rgba(13,43,30,0.3)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className="relative px-12 py-4 text-xs tracking-[0.25em] uppercase font-semibold cursor-pointer overflow-hidden group"
               style={{
-                background: "#c9a84c",
-                color: "#0d2b1e",
+                background: "#0d2b1e",
+                color: "#c9a84c",
                 fontFamily: "'Cormorant Garamond', serif",
                 letterSpacing: "0.25em",
                 border: "none",
@@ -131,7 +130,7 @@ export default function CTASection() {
                 className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
                 style={{
                   background:
-                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%)",
+                    "linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.25) 50%, transparent 100%)",
                 }}
               />
               <span className="relative z-10">Book a Consultation</span>

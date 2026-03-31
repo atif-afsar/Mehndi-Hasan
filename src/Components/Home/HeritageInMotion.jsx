@@ -78,7 +78,7 @@ const HeritageInMotion = () => {
   return (
     <section
       style={{
-        background: 'linear-gradient(180deg, #080d0b 0%, #0c1410 60%, #080d0b 100%)',
+        background: '#E8DBB3',
         fontFamily: "'Cormorant Garamond', Georgia, serif",
         position: 'relative',
         overflow: 'hidden',
@@ -108,7 +108,7 @@ const HeritageInMotion = () => {
           style={{ textAlign: 'center', marginBottom: 'clamp(48px, 8vw, 72px)' }}
         >
           <p style={{
-            color: '#c5a059', letterSpacing: '0.3em', fontSize: 'clamp(10px, 2vw, 11px)',
+            color: '#0b1510', letterSpacing: '0.3em', fontSize: 'clamp(10px, 2vw, 11px)',
             textTransform: 'uppercase', fontFamily: "'Montserrat', sans-serif",
             fontWeight: 500, marginBottom: '16px', opacity: 0.9,
           }}>
@@ -116,7 +116,7 @@ const HeritageInMotion = () => {
           </p>
 
           <h2 style={{
-            color: '#c5a059', fontSize: 'clamp(32px, 6vw, 58px)',
+            color: '#0b1510', fontSize: 'clamp(32px, 6vw, 58px)',
             fontStyle: 'italic', fontWeight: 300, lineHeight: 1.15,
             letterSpacing: '0.02em', margin: '0 0 20px',
           }}>
@@ -131,7 +131,7 @@ const HeritageInMotion = () => {
           </div>
 
           <p style={{
-            color: 'rgba(200,200,190,0.65)', fontSize: '17px', fontWeight: 300,
+            color: 'rgba(13,26,21,0.8)', fontSize: '17px', fontWeight: 300,
             lineHeight: 1.8, maxWidth: '520px', margin: '0 auto',
             fontStyle: 'italic',
           }}>
@@ -187,7 +187,7 @@ const HeritageInMotion = () => {
             style={{ marginBottom: 'clamp(32px, 6vw, 48px)' }}
           >
             <h3 style={{
-              color: '#c5a059',
+              color: '#0b1510',
               fontSize: 'clamp(26px, 3.5vw, 36px)',
               fontStyle: 'italic',
               fontWeight: 300,
@@ -198,7 +198,7 @@ const HeritageInMotion = () => {
             </h3>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px' }}>
               <div style={{ width: '50px', height: '1px', background: 'linear-gradient(90deg, transparent, #c5a059)' }} />
-              <Instagram size={18} color="#c5a059" style={{ opacity: 0.8 }} />
+              <Instagram size={18} color="#0b1510" style={{ opacity: 0.8 }} />
               <div style={{ width: '50px', height: '1px', background: 'linear-gradient(90deg, #c5a059, transparent)' }} />
             </div>
           </motion.div>
@@ -420,7 +420,7 @@ const VideoCard = ({ video, index, hovered, onHover, onLeave, onClick }) => {
       {/* Text below (for YouTube only) */}
       <div style={{ paddingTop: '14px' }}>
         <h3 style={{
-          color: hovered ? '#c5a059' : 'rgba(240,235,220,0.88)',
+          color: hovered ? '#204a39' : '#0d1a15',
           fontSize: 'clamp(16px, 2.5vw, 18px)', fontWeight: 300, fontStyle: 'italic',
           letterSpacing: '0.02em', lineHeight: 1.3,
           margin: 0, transition: 'color 0.35s',

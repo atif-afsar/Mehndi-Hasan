@@ -53,13 +53,13 @@ const FeaturedCollections = () => {
   return (
     <section
       style={{
-        background: "linear-gradient(180deg, #080e0b 0%, #0b1510 50%, #080e0b 100%)",
+        background: "#E8DBB3",
         padding: "clamp(64px, 10vw, 128px) clamp(20px, 5vw, 64px)",
         fontFamily: "'Cormorant Garamond', Georgia, serif",
         position: "relative",
         overflow: "hidden",
-        borderTop: "1px solid rgba(255,255,255,0.04)",
-        borderBottom: "1px solid rgba(255,255,255,0.04)",
+        borderTop: "1px solid rgba(13,26,21,0.1)",
+        borderBottom: "1px solid rgba(13,26,21,0.1)",
       }}
     >
       {/* Ambient gold glow top */}
@@ -113,7 +113,7 @@ const FeaturedCollections = () => {
               style={{
                 fontSize: "10px",
                 letterSpacing: "0.45em",
-                color: "#c5a059",
+                color: "#0b1510",
                 textTransform: "uppercase",
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 600,
@@ -127,14 +127,14 @@ const FeaturedCollections = () => {
               style={{
                 fontSize: "clamp(40px, 6vw, 80px)",
                 fontWeight: 400,
-                color: "#f0ebe0",
+                color: "#0d1a15",
                 lineHeight: 1.08,
                 letterSpacing: "-0.01em",
                 margin: 0,
               }}
             >
               Curated{" "}
-              <span style={{ color: "#c5a059", fontStyle: "italic" }}>Collections</span>
+              <span style={{ color: "#0b1510", fontStyle: "italic" }}>Collections</span>
             </h2>
           </div>
 
@@ -158,12 +158,12 @@ const FeaturedCollections = () => {
               alignSelf: "flex-end",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.color = "#fff";
-              e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.4)";
+              e.currentTarget.style.color = "#0d1a15";
+              e.currentTarget.style.borderBottomColor = "rgba(13,26,21,0.4)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = "#c5a059";
-              e.currentTarget.style.borderBottomColor = "rgba(197,160,89,0.3)";
+              e.currentTarget.style.color = "#0d1a15";
+              e.currentTarget.style.borderBottomColor = "rgba(13,26,21,0.3)";
             }}
           >
             View All Series
@@ -341,7 +341,7 @@ const DesktopCard = ({ item, idx, hovered }) => (
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontSize: "clamp(20px, 2.2vw, 28px)",
             fontWeight: 400,
-            color: hovered ? "#c5a059" : "#f0ebe0",
+            color: hovered ? "#204a39" : "#0d1a15",
             letterSpacing: "0.01em",
             margin: "0 0 8px",
             transition: "color 0.35s",
@@ -354,7 +354,7 @@ const DesktopCard = ({ item, idx, hovered }) => (
             fontFamily: "'Montserrat', sans-serif",
             fontSize: "11px",
             fontWeight: 400,
-            color: "rgba(200,190,170,0.5)",
+            color: "rgba(13,26,21,0.7)",
             letterSpacing: "0.12em",
             textTransform: "uppercase",
             margin: 0,
@@ -382,7 +382,7 @@ const DesktopCard = ({ item, idx, hovered }) => (
       >
         <span
           style={{
-            color: hovered ? "#c5a059" : "rgba(197,160,89,0.4)",
+            color: hovered ? "#204a39" : "rgba(13,26,21,0.4)",
             fontSize: "14px",
             transform: hovered ? "translate(2px, -2px)" : "translate(0,0)",
             display: "inline-block",
@@ -414,7 +414,7 @@ const MobileCard = ({ item, idx, hovered }) => (
       display: "flex",
       gap: "16px",
       padding: "22px 0",
-      borderBottom: "1px solid rgba(255,255,255,0.05)",
+      borderBottom: "1px solid rgba(13,26,21,0.1)",
       alignItems: "center",
     }}
   >
@@ -488,7 +488,7 @@ const MobileCard = ({ item, idx, hovered }) => (
           fontFamily: "'Cormorant Garamond', Georgia, serif",
           fontSize: "19px",
           fontWeight: 400,
-          color: "#f0ebe0",
+          color: "#0d1a15",
           letterSpacing: "0.01em",
           margin: "0 0 6px",
           lineHeight: 1.2,
@@ -502,7 +502,7 @@ const MobileCard = ({ item, idx, hovered }) => (
           fontFamily: "'Montserrat', sans-serif",
           fontSize: "10px",
           fontWeight: 400,
-          color: "rgba(200,190,170,0.45)",
+          color: "rgba(13,26,21,0.7)",
           letterSpacing: "0.1em",
           textTransform: "uppercase",
           margin: "0 0 12px",
@@ -524,7 +524,7 @@ const MobileCard = ({ item, idx, hovered }) => (
     {/* Arrow */}
     <span
       style={{
-        color: "rgba(197,160,89,0.4)",
+        color: "rgba(13,26,21,0.4)",
         fontSize: "16px",
         flexShrink: 0,
         paddingRight: "4px",

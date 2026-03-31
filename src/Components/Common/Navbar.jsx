@@ -34,8 +34,8 @@ const Navbar = () => {
       <nav
         className={`fixed top-0 left-0 w-full z-[100] flex items-center justify-between px-6 md:px-14 transition-all duration-700
         ${scrolled
-          ? "h-[70px] bg-[#0c0b09]/90 backdrop-blur-md border-b border-[#b8965a]/20"
-          : "h-[100px] bg-transparent"
+          ? "h-[70px] bg-[#E8DBB3]/95 backdrop-blur-md border-b border-[#0d2b1e]/15 shadow-sm"
+          : "h-[80px] bg-[#E8DBB3]"
         }`}
       >
         {/* REFINED LOGO AREA */}
@@ -51,10 +51,10 @@ const Navbar = () => {
           </div>
           
           <div className="flex flex-col">
-            <span className="font-serif text-[14px] md:text-[18px] tracking-[0.25em] text-white uppercase leading-tight group-hover:text-[#b8965a] transition-colors duration-500">
+            <span className="font-serif text-[14px] md:text-[18px] tracking-[0.25em] text-[#0d2b1e] uppercase leading-tight group-hover:text-[#204a39] transition-colors duration-500">
               Mehdi Hasan Tailor
             </span>
-            <span className="font-sans font-normal text-[10px] md:text-[9px] tracking-[0.5em] text-[#b8965a] uppercase">
+            <span className="font-sans font-normal text-[10px] md:text-[9px] tracking-[0.5em] text-[#0d2b1e]/70 uppercase">
               Estd. 1944
             </span>
           </div>
@@ -66,7 +66,7 @@ const Navbar = () => {
             <li key={link.name}>
               <Link
                 to={link.path}
-                className="relative font-sans font-medium text-[10px] tracking-[0.3em] uppercase text-white/70 hover:text-white transition-colors duration-300 py-1"
+                className="relative font-sans font-bold text-[11px] tracking-[0.3em] uppercase text-[#0d2b1e]/70 hover:text-[#0d2b1e] transition-colors duration-300 py-1"
               >
                 {link.name}
               </Link>
@@ -78,7 +78,7 @@ const Navbar = () => {
         <div className="flex items-center gap-6 z-[110]">
           <Link
             to="/contact"
-            className="hidden sm:inline-block font-sans font-medium text-[10px] tracking-[0.2em] uppercase text-[#b8965a] px-6 py-3 border border-[#b8965a]/40 hover:bg-[#b8965a] hover:text-[#0c0b09] transition-all duration-500"
+            className="hidden sm:inline-block font-sans font-medium text-[10px] tracking-[0.2em] uppercase text-[#0d2b1e] px-6 py-3 border border-[#0d2b1e]/40 hover:bg-[#0d2b1e] hover:text-[#E8DBB3] transition-all duration-500"
           >
             Book Appointment
           </Link>
@@ -88,8 +88,8 @@ const Navbar = () => {
             onClick={() => setIsOpen(true)}
             className="xl:hidden flex flex-col gap-1.5 p-2 focus:outline-none"
           >
-            <span className="w-6 h-[1px] bg-white" />
-            <span className="w-4 h-[1px] bg-white ml-auto" />
+            <span className="w-6 h-[1px] bg-[#0d2b1e]" />
+            <span className="w-4 h-[1px] bg-[#0d2b1e] ml-auto" />
           </button>
         </div>
       </nav>
@@ -102,7 +102,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[1000] bg-[#0c0b09] flex flex-col p-10 shadow-none"
+            className="fixed inset-0 z-[1000] bg-[#E8DBB3] flex flex-col p-10 shadow-none"
             style={{ boxShadow: "none" }}
           >
             {/* Close Button Inside Drawer */}
@@ -111,10 +111,10 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className="group p-4 flex items-center gap-3"
               >
-                <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#b8965a] opacity-0 group-hover:opacity-100 transition-opacity">Close</span>
+                <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#0d2b1e] opacity-0 group-hover:opacity-100 transition-opacity">Close</span>
                 <div className="relative w-8 h-8 flex items-center justify-center">
-                  <span className="absolute w-full h-[1px] bg-white rotate-45" />
-                  <span className="absolute w-full h-[1px] bg-white -rotate-45" />
+                  <span className="absolute w-full h-[1px] bg-[#0d2b1e] rotate-45" />
+                  <span className="absolute w-full h-[1px] bg-[#0d2b1e] -rotate-45" />
                 </div>
               </button>
             </div>
@@ -131,7 +131,7 @@ const Navbar = () => {
                     <Link
                       to={link.path}
                       onClick={() => setIsOpen(false)}
-                      className="font-serif text-5xl text-white hover:text-[#b8965a] italic transition-colors"
+                      className="font-serif text-5xl text-[#0d2b1e] hover:text-[#204a39] italic transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -149,7 +149,7 @@ const Navbar = () => {
                 <Link
                   to="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="inline-block font-sans font-light text-[10px] tracking-[0.2em] uppercase text-[#b8965a] px-6 py-3 border border-[#b8965a]/40 hover:bg-[#b8965a] hover:text-[#0c0b09] transition-all duration-500"
+                  className="inline-block font-sans font-light text-[10px] tracking-[0.2em] uppercase text-[#0d2b1e] px-6 py-3 border border-[#0d2b1e]/40 hover:bg-[#0d2b1e] hover:text-[#E8DBB3] transition-all duration-500"
                 >
                   Book Appointment
                 </Link>
@@ -162,7 +162,7 @@ const Navbar = () => {
 
             {/* Background Accent */}
             <div className="absolute bottom-0 right-0 p-10 opacity-10 pointer-events-none">
-              <h1 className="text-[15vw] font-serif text-[#b8965a]">MH</h1>
+              <h1 className="text-[15vw] font-serif text-[#0d2b1e]">MH</h1>
             </div>
           </motion.div>
         )}
