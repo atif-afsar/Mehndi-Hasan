@@ -69,21 +69,21 @@ const ProductGrid = () => {
   };
 
   return (
-    <section id="product-grid" className="bg-[#0a1310] py-24 px-6 md:px-12">
+    <section id="product-grid" className="bg-[#E8DBB3] py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         
         {/* Categories */}
-        <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-8 md:gap-12 mb-16 border-b border-white/5 pb-6">
+        <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-8 md:gap-12 mb-16 border-b border-[#0d2b1e]/15 pb-6">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setFilter(cat.id)}
               className={`text-[11px] md:text-[13px] tracking-[0.15em] uppercase font-bold transition-all duration-300 relative pb-4 md:pb-6 ${
-                filter === cat.id ? "text-[#c5a059]" : "text-gray-500 hover:text-white"
+                filter === cat.id ? "text-[#0d2b1e]" : "text-[#0d2b1e]/60 hover:text-[#0d2b1e]"
               }`}
             >
               {cat.label}
-              {filter === cat.id && <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#c5a059]"></div>}
+              {filter === cat.id && <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#0d2b1e]"></div>}
             </button>
           ))}
         </div>
@@ -96,7 +96,7 @@ const ProductGrid = () => {
               className={`group flex flex-col ${product.category !== 'Safa-Pagdi' ? 'cursor-pointer' : ''}`} 
               onClick={() => product.category !== 'Safa-Pagdi' && navigate(`/collections/${product.id}`)}
             >
-              <div className="aspect-[3/4] overflow-hidden bg-[#0d1815] relative mb-4 rounded-sm shadow-xl border border-white/5 group-hover:border-[#c5a059]/30 transition-colors">
+              <div className="aspect-[3/4] overflow-hidden bg-[#d8cba3] relative mb-4 rounded-sm shadow-xl border border-[#0d2b1e]/10 group-hover:border-[#0d2b1e]/40 transition-colors">
                 <LazyImage 
                   src={product.image} 
                   alt={product.title} 
@@ -105,7 +105,7 @@ const ProductGrid = () => {
                 />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-500"></div>
                 {product.badge && (
-                    <div className="absolute top-4 left-4 bg-[#c5a059]/90 text-black text-[9px] font-bold uppercase py-1.5 px-3 tracking-widest backdrop-blur-sm shadow-lg">
+                    <div className="absolute top-4 left-4 bg-[#0d2b1e]/90 text-[#E8DBB3] text-[9px] font-bold uppercase py-1.5 px-3 tracking-widest backdrop-blur-sm shadow-lg">
                         {product.badge}
                     </div>
                 )}
@@ -113,12 +113,12 @@ const ProductGrid = () => {
               
               <div className="space-y-1.5 relative px-1">
                 <div className="flex justify-between items-start">
-                    <h3 className="text-white text-lg font-serif font-light tracking-wide capitalize">{product.title.replace('-', ' ')}</h3>
+                    <h3 className="text-[#0d2b1e] text-lg font-serif tracking-wide capitalize">{product.title.replace('-', ' ')}</h3>
                 </div>
-                <p className="text-gray-400 text-[11px] italic font-light tracking-wider">{product.desc}</p>
-                <div className="flex justify-between items-center pt-3 border-t border-white/5 mt-2">
-                    <p className="text-[#c5a059] text-[13px] font-semibold tracking-wider">{product.price}</p>
-                    <button className="text-gray-600 hover:text-[#c5a059] transition-colors focus:outline-none transform hover:scale-110">
+                <p className="text-[#0d2b1e]/70 text-[11px] italic font-light tracking-wider">{product.desc}</p>
+                <div className="flex justify-between items-center pt-3 border-t border-[#0d2b1e]/10 mt-2">
+                    <p className="text-[#0d2b1e] text-[13px] font-bold tracking-wider">{product.price}</p>
+                    <button className="text-[#0d2b1e]/50 hover:text-[#204a39] transition-colors focus:outline-none transform hover:scale-110">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
@@ -137,8 +137,8 @@ const ProductGrid = () => {
               disabled={currentPage === 1}
               className={`px-5 py-2.5 text-xs font-bold tracking-widest uppercase border rounded-sm transition-all duration-300 ${
                 currentPage === 1 
-                  ? "border-white/5 text-white/20 cursor-not-allowed bg-white/5" 
-                  : "border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-black shadow-[0_0_15px_rgba(197,160,89,0.1)] hover:shadow-[0_0_20px_rgba(197,160,89,0.3)]"
+                  ? "border-[#0d2b1e]/10 text-[#0d2b1e]/30 cursor-not-allowed bg-[#0d2b1e]/5" 
+                  : "border-[#0d2b1e]/50 text-[#0d2b1e] hover:bg-[#0d2b1e] hover:text-[#E8DBB3] shadow-[0_0_15px_rgba(13,43,30,0.1)] hover:shadow-[0_0_20px_rgba(13,43,30,0.3)]"
               }`}
             >
               Prev
@@ -151,8 +151,8 @@ const ProductGrid = () => {
                   onClick={() => handlePageChange(page)}
                   className={`w-10 h-10 flex items-center justify-center text-sm rounded-sm transition-all duration-300 ${
                     currentPage === page
-                      ? "bg-[#c5a059] text-black font-bold shadow-[0_0_15px_rgba(197,160,89,0.4)]"
-                      : "border border-white/20 text-white/70 hover:border-[#c5a059] hover:text-[#c5a059] hover:bg-[#c5a059]/10"
+                      ? "bg-[#0d2b1e] text-[#E8DBB3] font-bold shadow-[0_0_15px_rgba(13,43,30,0.2)]"
+                      : "border border-[#0d2b1e]/20 text-[#0d2b1e]/80 hover:border-[#0d2b1e] hover:text-[#0d2b1e] hover:bg-[#0d2b1e]/10"
                   }`}
                 >
                   {page}
@@ -165,8 +165,8 @@ const ProductGrid = () => {
               disabled={currentPage === totalPages}
               className={`px-5 py-2.5 text-xs font-bold tracking-widest uppercase border rounded-sm transition-all duration-300 ${
                 currentPage === totalPages 
-                  ? "border-white/5 text-white/20 cursor-not-allowed bg-white/5" 
-                  : "border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-black shadow-[0_0_15px_rgba(197,160,89,0.1)] hover:shadow-[0_0_20px_rgba(197,160,89,0.3)]"
+                  ? "border-[#0d2b1e]/10 text-[#0d2b1e]/30 cursor-not-allowed bg-[#0d2b1e]/5" 
+                  : "border-[#0d2b1e]/50 text-[#0d2b1e] hover:bg-[#0d2b1e] hover:text-[#E8DBB3] shadow-[0_0_15px_rgba(13,43,30,0.1)] hover:shadow-[0_0_20px_rgba(13,43,30,0.3)]"
               }`}
             >
               Next

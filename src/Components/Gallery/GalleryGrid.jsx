@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import LazyImage from '../Common/LazyImage';
 
 const GalleryGrid = () => {
@@ -25,11 +25,11 @@ const GalleryGrid = () => {
     const images = [...awardsImages, ...celebsImages];
 
   return (
-    <section className="bg-[#0f110f] w-full px-6 md:px-14 py-12">
+    <section className="bg-[#E8DBB3] w-full px-6 md:px-14 py-12">
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* Filters & Sorting */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-white/10 pb-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b-2 border-[#234d12]/20 pb-6">
            
            {/* Filters */}
            <div className="flex flex-wrap gap-2 md:gap-4">
@@ -37,10 +37,10 @@ const GalleryGrid = () => {
                   <button 
                     key={filter} 
                     onClick={() => setActiveFilter(filter)}
-                    className={`font-['Raleway'] text-[9.5px] tracking-[0.2em] px-4 py-2 uppercase border transition-colors duration-300
+                    className={`font-['Raleway'] text-[9.5px] tracking-[0.2em] px-4 py-2 uppercase border-2 transition-colors duration-300 rounded
                     ${activeFilter === filter 
-                        ? 'text-[#0f110f] bg-[#b8965a] border-[#b8965a]' 
-                        : 'text-[#b8965a] border-[#b8965a]/40 hover:border-[#b8965a] bg-transparent'
+                        ? 'text-[#E8DBB3] bg-[#1a3d0f] border-[#1a3d0f]' 
+                        : 'text-[#1a3d0f] border-[#234d12]/40 hover:border-[#1a3d0f] bg-transparent'
                     }`}
                   >
                       {filter} {filter !== 'ALL WORK' && '▾'}
@@ -49,9 +49,9 @@ const GalleryGrid = () => {
            </div>
 
            {/* Sorting Dropdown Mock */}
-           <div className="flex items-center gap-4 text-[#b8965a]">
-               <span className="font-['Raleway'] text-[9px] tracking-[0.2em] uppercase opacity-60">SORT BY</span>
-               <button className="font-['Raleway'] text-[10px] tracking-[0.1em] uppercase font-semibold flex items-center gap-2">
+           <div className="flex items-center gap-4 text-[#1a3d0f]">
+               <span className="font-['Raleway'] text-[9px] tracking-[0.2em] uppercase opacity-70">SORT BY</span>
+               <button className="font-['Raleway'] text-[10px] tracking-[0.1em] uppercase font-bold flex items-center gap-2">
                    LATEST <span className="text-[14px]">▾</span>
                </button>
            </div>
@@ -62,16 +62,16 @@ const GalleryGrid = () => {
             {images
                 .filter(img => activeFilter === 'ALL WORK' || img.style === activeFilter)
                 .map((img) => (
-                <div key={img.id} className="relative group overflow-hidden bg-[#1a1d1a] border border-white/5 cursor-pointer rounded-sm">
+                <div key={img.id} className="relative group overflow-hidden bg-[#d4c89a] border-2 border-[#234d12]/20 cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
                     <LazyImage 
                         src={img.src} 
                         alt={img.title} 
                         className="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
                         onError={(e) => { e.target.style.display = 'none'; }}
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6">
-                        <p className="text-white text-sm font-light tracking-wider uppercase">{img.title}</p>
-                        <p className="text-[#b8965a] text-xs tracking-widest uppercase mt-1">{img.style}</p>
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1a3d0f]/90 via-[#1a3d0f]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6">
+                        <p className="text-[#E8DBB3] text-sm font-medium tracking-wider uppercase">{img.title}</p>
+                        <p className="text-[#b8d89a] text-xs tracking-widest uppercase mt-1">{img.style}</p>
                     </div>
                 </div>
             ))}

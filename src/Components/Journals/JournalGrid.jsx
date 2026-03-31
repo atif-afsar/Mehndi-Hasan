@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -45,7 +44,7 @@ const journals = [
 const JournalGrid = () => {
   const navigate = useNavigate();
   return (
-    <section className="bg-[#0a1310] py-24 md:py-48 px-6 md:px-12">
+    <section className="bg-[#E8DBB3] py-24 md:py-48 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Featured Article */}
         <motion.div
@@ -55,36 +54,36 @@ const JournalGrid = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 mb-24 md:mb-32"
         >
-          <div className="relative overflow-hidden aspect-[4/5] md:aspect-[3/4]">
+          <div className="relative overflow-hidden aspect-[4/5] md:aspect-[3/4] rounded-lg shadow-lg">
             <img 
               src={journals[0].image}
               alt={journals[0].title}
               onClick={() => navigate(`/journals/${journals[0].id}`)}
-              className="w-full h-full object-cover hover:grayscale-0 hover:opacity-100 transition-all duration-1000 cursor-pointer"
+              className="w-full h-full object-cover hover:scale-105 transition-all duration-700 cursor-pointer"
             />
-            <div className="absolute inset-0 border border-white/10"></div>
+            <div className="absolute inset-0 border-2 border-[#3d6b1f]/20 hover:border-[#3d6b1f]/40 transition-colors"></div>
           </div>
 
           <div className="flex flex-col justify-center space-y-8">
             <div>
-              <p className="text-[#c5a059] text-[10px] tracking-[0.4em] font-bold uppercase mb-4">
+              <p className="text-[#3d6b1f] text-[10px] tracking-[0.4em] font-bold uppercase mb-4">
                 {journals[0].category} / {journals[0].date}
               </p>
-              <h2 className="text-4xl md:text-5xl font-serif font-medium text-white mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-serif font-semibold text-[#2d5016] mb-6 leading-tight">
                 {journals[0].title}
               </h2>
-              <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed tracking-widest opacity-80">
+              <p className="text-[#3d6b1f]/80 text-sm md:text-base font-normal leading-relaxed tracking-wide">
                 {journals[0].excerpt}
               </p>
             </div>
 
             <div className="flex items-center gap-8">
-              <span className="text-[9px] tracking-[0.3em] uppercase text-gray-500 font-light">
+              <span className="text-[9px] tracking-[0.3em] uppercase text-[#3d6b1f]/60 font-medium">
                 {journals[0].readTime}
               </span>
               <button 
                 onClick={() => navigate(`/journals/${journals[0].id}`)}
-                className="group flex items-center gap-3 text-[#c5a059] text-[10px] tracking-[0.3em] uppercase font-bold hover:text-white transition-colors"
+                className="group flex items-center gap-3 text-[#2d5016] text-[10px] tracking-[0.3em] uppercase font-bold hover:text-[#3d6b1f] transition-colors"
               >
                 <span>Read Article</span>
                 <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -105,30 +104,30 @@ const JournalGrid = () => {
               className="group cursor-pointer"
               onClick={() => navigate(`/journals/${journal.id}`)}
             >
-              <div className="relative overflow-hidden aspect-[4/5] mb-6">
+              <div className="relative overflow-hidden aspect-[4/5] mb-6 rounded-lg shadow-md">
                 <img 
                   src={journal.image}
                   alt={journal.title}
-                  className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 cursor-pointer"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 cursor-pointer"
                 />
-                <div className="absolute inset-0 border border-white/10 group-hover:border-[#c5a059]/30 transition-colors"></div>
+                <div className="absolute inset-0 border-2 border-[#3d6b1f]/20 group-hover:border-[#3d6b1f]/40 transition-colors"></div>
               </div>
 
               <div className="space-y-4">
-                <p className="text-[#c5a059] text-[9px] tracking-[0.3em] font-bold uppercase">
+                <p className="text-[#3d6b1f] text-[9px] tracking-[0.3em] font-bold uppercase">
                   {journal.category} / {journal.date}
                 </p>
-                <h3 className="text-xl md:text-2xl font-serif font-medium text-white group-hover:text-[#c5a059] transition-colors leading-tight">
+                <h3 className="text-xl md:text-2xl font-serif font-semibold text-[#2d5016] group-hover:text-[#3d6b1f] transition-colors leading-tight">
                   {journal.title}
                 </h3>
-                <p className="text-gray-500 text-sm font-light leading-relaxed opacity-70 group-hover:opacity-100 transition-opacity">
+                <p className="text-[#3d6b1f]/75 text-sm font-normal leading-relaxed group-hover:text-[#3d6b1f] transition-colors">
                   {journal.excerpt}
                 </p>
-                <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                  <span className="text-[8px] tracking-[0.2em] uppercase text-gray-600 font-light">
+                <div className="flex items-center justify-between pt-4 border-t border-[#3d6b1f]/15">
+                  <span className="text-[8px] tracking-[0.2em] uppercase text-[#3d6b1f]/60 font-medium">
                     {journal.readTime}
                   </span>
-                  <ArrowUpRight size={12} className="text-[#c5a059] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  <ArrowUpRight size={12} className="text-[#2d5016] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </div>
               </div>
             </motion.div>

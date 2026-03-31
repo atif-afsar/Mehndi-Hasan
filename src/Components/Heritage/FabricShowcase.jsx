@@ -14,7 +14,7 @@ const fabrics = [
 const FabricShowcase = () => {
   return (
     <section style={{
-      background: 'linear-gradient(180deg, #0a1310 0%, #0c1512 60%, #0a1310 100%)',
+      background: '#E8DBB3',
       fontFamily: "'Cormorant Garamond', Georgia, serif",
       position: 'relative',
       overflow: 'hidden',
@@ -30,24 +30,29 @@ const FabricShowcase = () => {
           style={{ marginBottom: 'clamp(32px, 6vw, 48px)' }}
         >
           <h3 style={{
-            color: '#c5a059',
+            color: '#2d5016',
             fontSize: 'clamp(26px, 3.5vw, 36px)',
             fontStyle: 'italic',
-            fontWeight: 300,
+            fontWeight: 600,
             textAlign: 'center',
             marginBottom: '16px',
           }}>
             The Fabric of Legacy
           </h3>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px' }}>
-            <div style={{ width: '50px', height: '1px', background: 'linear-gradient(90deg, transparent, #c5a059)' }} />
-            <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#c5a059', opacity: 0.6 }} />
-            <div style={{ width: '50px', height: '1px', background: 'linear-gradient(90deg, #c5a059, transparent)' }} />
+            <div style={{ width: '50px', height: '1px', background: 'linear-gradient(90deg, transparent, #3d6b1f)' }} />
+            <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#3d6b1f', opacity: 0.8 }} />
+            <div style={{ width: '50px', height: '1px', background: 'linear-gradient(90deg, #3d6b1f, transparent)' }} />
           </div>
           <p style={{
-            color: 'rgba(200,200,190,0.65)', fontSize: '15px', fontWeight: 300,
-            lineHeight: 1.8, maxWidth: '520px', margin: '20px auto 0',
-            fontStyle: 'italic', textAlign: 'center',
+            color: '#2d5016',
+            fontSize: '15px',
+            fontWeight: 400,
+            lineHeight: 1.8,
+            maxWidth: '520px',
+            margin: '20px auto 0',
+            fontStyle: 'italic',
+            textAlign: 'center',
           }}>
             Explore the exquisite textures and materials curated to hand-construct our timeless garments.
           </p>
@@ -85,11 +90,11 @@ const FabricCard = ({ fabric, index }) => {
         position: 'relative',
         aspectRatio: '3/4',
         overflow: 'hidden',
-        background: '#0d1310',
-        borderRadius: '2px',
+        background: '#d4c89a',
+        borderRadius: '8px',
         boxShadow: hovered
-          ? '0 20px 40px -12px rgba(0,0,0,0.8), 0 0 0 1px rgba(197,160,89,0.3)'
-          : '0 10px 20px -10px rgba(0,0,0,0.5), 0 0 0 1px rgba(197,160,89,0.08)',
+          ? '0 20px 40px -12px rgba(0,0,0,0.3), 0 0 0 2px rgba(61,107,31,0.4)'
+          : '0 10px 20px -10px rgba(0,0,0,0.2), 0 0 0 1px rgba(61,107,31,0.15)',
         transition: 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)',
       }}
     >
@@ -113,8 +118,8 @@ const FabricCard = ({ fabric, index }) => {
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'linear-gradient(to top, rgba(8,13,11,0.95) 0%, transparent 40%)',
-        opacity: hovered ? 0.9 : 0.7,
+        background: 'linear-gradient(to top, rgba(232,219,179,0.85) 0%, transparent 40%)',
+        opacity: hovered ? 0.8 : 0.6,
         transition: 'opacity 0.6s',
       }} />
 
@@ -122,7 +127,7 @@ const FabricCard = ({ fabric, index }) => {
       <div style={{
         position: 'absolute',
         inset: '12px',
-        border: '1px solid rgba(197,160,89,0.25)',
+        border: '1px solid rgba(61,107,31,0.4)',
         opacity: hovered ? 1 : 0,
         transform: hovered ? 'scale(1)' : 'scale(0.95)',
         transition: 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)',
@@ -140,21 +145,22 @@ const FabricCard = ({ fabric, index }) => {
         transition: 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)',
       }}>
         <h4 style={{
-          color: '#c5a059',
+          color: '#2d5016',
           fontSize: '18px',
           fontStyle: 'italic',
-          fontWeight: 300,
+          fontWeight: 600,
           margin: '0 0 6px 0',
           fontFamily: "'Cormorant Garamond', Georgia, serif",
           letterSpacing: '0.04em',
+          textShadow: '0 1px 2px rgba(255,255,255,0.3)',
         }}>
           {fabric.title}
         </h4>
         <div style={{
           height: '1px',
-          background: 'linear-gradient(90deg, #c5a059, transparent)',
+          background: 'linear-gradient(90deg, #3d6b1f, transparent)',
           width: hovered ? '100%' : '30%',
-          opacity: hovered ? 0.7 : 0.3,
+          opacity: hovered ? 0.8 : 0.5,
           transition: 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)',
         }} />
       </div>
