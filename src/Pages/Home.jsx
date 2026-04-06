@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import Hero from '../Components/Home/Hero'
+import AddressSection from '../Components/Home/AddressSection'
 import Footer from '../Components/Common/Footer'
 import SectionLoader from '../Components/Common/SectionLoader'
 import SEO from '../Components/Common/SEO'
@@ -23,6 +24,7 @@ const Home = () => {
         ogImage="/Home/hero.webp"
       />
       <Hero />
+      <AddressSection />
       <Suspense fallback={<SectionLoader bgColor="bg-black" />}>
         <Heritage />
       </Suspense>

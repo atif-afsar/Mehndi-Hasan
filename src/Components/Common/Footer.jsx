@@ -178,6 +178,7 @@ export default function Footer() {
                   </h4>
                   <p className="text-white/50 text-[13px] font-light leading-relaxed tracking-wide">
                   Tasveer Mahal, opp. Head Post Office, Civil Lines, <br/> Aligarh, Uttar Pradesh 202001
+
                   </p>
                 </div>
 
