@@ -11,11 +11,11 @@ const Hero = () => {
         alt="Mehdi Hasan Tailor Hero"
         width="1920"
         height="1080"
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] hover:scale-110 opacity-60"
+        className="absolute inset-0 w-full h-full object-top transition-transform duration-[10s] hover:scale-110 opacity-50"
         fetchpriority="high"
         loading="eager"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1310]/80 via-transparent to-[#0a1310]/95"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
 
       {/* Decorative Border */}
       <div className="absolute inset-4 md:inset-10 border border-[#c5a059]/10 pointer-events-none z-20"></div>
@@ -35,7 +35,7 @@ const Hero = () => {
           <span className="italic text-[#c5a059]"> Royal</span> <br /> Sherwanis
         </h1>
 
-        <p className="max-w-xl mx-auto text-xs md:text-base text-gray-400 font-light leading-relaxed tracking-widest mb-6 md:mb-20 opacity-80">
+        <p className="max-w-xl mx-auto text-xs md:text-base text-gray-200 font-light leading-relaxed tracking-widest mb-6 md:mb-20">
           Experience the pinnacle of sartorial excellence. Each garment is a masterpiece, 
           handcrafted for the modern gentleman who demands nothing less than perfection.
         </p>
