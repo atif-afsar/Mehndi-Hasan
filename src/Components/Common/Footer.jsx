@@ -164,54 +164,49 @@ export default function Footer() {
             </motion.div>
           </div>
 
-          {/* Contact / Location Accordion */}
+          {/* Contact / Location - Always Open */}
           <div className="lg:col-span-4">
             <motion.div 
               custom={3} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-              className="h-full"
+              className="h-full border-b border-white/5 py-4 lg:py-0 lg:border-none"
             >
-              <MobileAccordion 
-                title="Contact / Location" 
-                isOpen={openSection === 'contact'} 
-                onClick={() => toggleSection('contact')}
-              >
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-[#c5a059] font-sans text-[10px] tracking-[0.3em] uppercase mb-3 flex items-center gap-2">
-                      <MapPin size={12} /> Aligarh Studio
-                    </h4>
-                    <p className="text-white/50 text-[13px] font-light leading-relaxed tracking-wide">
-                    Tasveer Mahal, opp. Head Post Office, Civil Lines, <br/> Aligarh, Uttar Pradesh 202001
-                    </p>
-                  </div>
+              <h4 className="text-[#c5a059] font-sans text-[10px] tracking-[0.3em] uppercase lg:mb-8">Contact / Location</h4>
+              <div className="pt-4 lg:pt-0 space-y-6">
+                <div>
+                  <h4 className="text-[#c5a059] font-sans text-[10px] tracking-[0.3em] uppercase mb-3 flex items-center gap-2">
+                    <MapPin size={12} /> Aligarh Studio
+                  </h4>
+                  <p className="text-white/50 text-[13px] font-light leading-relaxed tracking-wide">
+                  Tasveer Mahal, opp. Head Post Office, Civil Lines, <br/> Aligarh, Uttar Pradesh 202001
+                  </p>
+                </div>
 
-                  <div>
-                    <h4 className="text-[#c5a059] font-sans text-[10px] tracking-[0.3em] uppercase mb-3 flex items-center gap-2">
-                      <MapPin size={12} /> Delhi Branches
-                    </h4>
-                    <p className="text-white/50 text-[13px] font-light leading-relaxed tracking-wide mb-2.5">
-                    A.J.N.S. Plaza, New Shahji Sweet, Jasola Road, Kalindi Kunj, Okhla, New Delhi
-                    </p>
-                    <p className="text-white/50 text-[13px] font-light leading-relaxed tracking-wide">
-                    Rehman Complex, Batla House Chowk, Opp. Jamia Cooperative Bank, New Delhi-110025
-                    </p>
-                  </div>
-                  
-                  <div className="pt-4 border-t border-white/5 flex flex-col gap-2">
-                    <a href="mailto:tailormehdihasan@gmail.com" className="text-white/80 hover:text-[#c5a059] transition-colors font-serif italic tracking-wide mb-1 text-sm">
-                      tailormehdihasan@gmail.com
+                <div>
+                  <h4 className="text-[#c5a059] font-sans text-[10px] tracking-[0.3em] uppercase mb-3 flex items-center gap-2">
+                    <MapPin size={12} /> Delhi Branches
+                  </h4>
+                  <p className="text-white/50 text-[13px] font-light leading-relaxed tracking-wide mb-2.5">
+                  A.J.N.S. Plaza, New Shahji Sweet, Jasola Road, Kalindi Kunj, Okhla, New Delhi
+                  </p>
+                  <p className="text-white/50 text-[13px] font-light leading-relaxed tracking-wide">
+                  Rehman Complex, Batla House Chowk, Opp. Jamia Cooperative Bank, New Delhi-110025
+                  </p>
+                </div>
+                
+                <div className="pt-4 border-t border-white/5 flex flex-col gap-2">
+                  <a href="mailto:tailormehdihasan@gmail.com" className="text-white/80 hover:text-[#c5a059] transition-colors font-serif italic tracking-wide mb-1 text-sm">
+                    tailormehdihasan@gmail.com
+                  </a>
+                  <div className="flex flex-col gap-1.5">
+                    <a href="tel:+919359784628" className="text-white/50 hover:text-[#c5a059] transition-colors text-xs tracking-widest flex items-center gap-2">
+                      <Phone size={10} className="text-[#c5a059]" /> +91 93597 84628 <span className="text-white/30 text-[10px]">(Akhtar Mehdi)</span>
                     </a>
-                    <div className="flex flex-col gap-1.5">
-                      <a href="tel:+919359784628" className="text-white/50 hover:text-[#c5a059] transition-colors text-xs tracking-widest flex items-center gap-2">
-                        <Phone size={10} className="text-[#c5a059]" /> +91 93597 84628 <span className="text-white/30 text-[10px]">(Akhtar Mehdi)</span>
-                      </a>
-                      <a href="tel:+918791630471" className="text-white/50 hover:text-[#c5a059] transition-colors text-xs tracking-widest flex items-center gap-2">
-                        <Phone size={10} className="text-[#c5a059]" /> +91 87916 30471 <span className="text-white/30 text-[10px]">(Usaid Mehdi)</span>
-                      </a>
-                    </div>
+                    <a href="tel:+918791630471" className="text-white/50 hover:text-[#c5a059] transition-colors text-xs tracking-widest flex items-center gap-2">
+                      <Phone size={10} className="text-[#c5a059]" /> +91 87916 30471 <span className="text-white/30 text-[10px]">(Usaid Mehdi)</span>
+                    </a>
                   </div>
                 </div>
-              </MobileAccordion>
+              </div>
             </motion.div>
           </div>
           
