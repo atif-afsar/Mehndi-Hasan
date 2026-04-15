@@ -16,7 +16,7 @@ const generateProducts = (prefix, count, folder, ext = 'webp', imagePath = null)
 };
 
 const allProducts = [
-  ...generateProducts('image', 33, 'Sherwanis'),
+  ...generateProducts('image', 38, 'Sherwanis'),
   ...generateProducts('suit', 20, 'Suits'),
   ...generateProducts('kurta', 9, 'Kurta-Pajama', 'png', 'kurta'),
   ...generateProducts('west', 16, 'Indo-west', 'png', 'Indo-west'),
@@ -96,7 +96,7 @@ const ProductGrid = () => {
               className={`group flex flex-col ${product.category !== 'Safa-Pagdi' ? 'cursor-pointer' : ''}`} 
               onClick={() => product.category !== 'Safa-Pagdi' && navigate(`/collections/${product.id}`)}
             >
-              <div className="aspect-[3/4] overflow-hidden bg-[#d8cba3] relative mb-4 rounded-sm shadow-xl border border-[#0d2b1e]/10 group-hover:border-[#0d2b1e]/40 transition-colors">
+              <div className="aspect-[3/4] overflow-hidden bg-[#d8cba3] relative mb-4 rounded-sm border border-[#0d2b1e]/10">
                 <LazyImage 
                   src={product.image} 
                   alt={product.title} 

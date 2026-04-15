@@ -11,7 +11,7 @@ const Hero = () => {
         alt="Mehdi Hasan Tailor Hero"
         width="1920"
         height="1080"
-        className="absolute inset-0 w-full h-full object-top transition-transform duration-[10s] hover:scale-110 opacity-50"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] hover:scale-110 opacity-50"
         fetchpriority="high"
         loading="eager"
       />
